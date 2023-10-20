@@ -9,7 +9,7 @@ public class ex_05 {
         Scanner input = new Scanner(System.in);
 
         // Declarar variáveis
-        double num1, num2, num3, media;
+        double num1, num2, num3, media, mediapond;
 
         System.out.print("Insira valor do numero: ");
         num1 = input.nextDouble();
@@ -22,8 +22,10 @@ public class ex_05 {
 
         media = ((num1+num2+num3)/3);
 
+        mediapond = ((num1*0.20)+(num2*0.30)+(num3*0.50));
+
         System.out.println("A média aritimética é: " + media);
 
-
+        System.out.println("A média ponderada é: " + mediapond);
     }
 }
