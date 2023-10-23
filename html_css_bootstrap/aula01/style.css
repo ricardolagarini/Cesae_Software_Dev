@@ -16,12 +16,11 @@ h1 {
     font-size: 1.2em;
     background-color: rgb(130, 10, 209);
     padding: 4px;
-    height: 100px;
     width: 300px;
     border-radius: 4px;
     margin: auto;
-    text-align: center;
-     
+    
+    
 }
 
 h2 {
@@ -33,11 +32,27 @@ h2 {
     padding: 4px;
 }
 
-#lorem {
-    text-align: justify;
+
+
+p, pre, em {
+    text-align: justify; 
+    padding: 25px; 
+   
 }
 
-p{
-    text-align: center;  
-    margin: 40px 0px 0px 0px;
+div {
+    padding: 40px;
 }
+
+a{
+    color: blue;
+    font-weight: bold;
+}
+
+a:hover {
+    color: red;
+    background-color: white;
+    border-radius: 3px;
+    padding: 0px;
+}
+
