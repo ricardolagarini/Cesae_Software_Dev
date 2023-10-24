@@ -2,8 +2,7 @@ package Ficha_pratica_02;
 
 import java.util.Scanner;
 
-public class ex_05 {
-
+public class ex_06 {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -22,11 +21,9 @@ public class ex_05 {
         }
 
         if (num1>num2){
-            System.out.print("Menor numero é o " + num2 +"" + " e o maior é o " + num1);
-        }else {System.out.print("Menor numero é o " + num1 +"" + " e o maior é o " + num2);}
+            System.out.print("Maior numero é o " + num1 +"" + " e o menor é o " + num2);
+        }else {System.out.print("Maior numero é o " + num2 +"" + " e o menor é o " + num1);}
+
 
     }
-
-
 }
-
