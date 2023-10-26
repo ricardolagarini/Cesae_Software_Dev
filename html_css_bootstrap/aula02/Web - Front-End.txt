@@ -1,0 +1,6 @@
+https://validator.w3.org/#validate_by_uri
+https://www.w3schools.com/html/default.asp
+https://www.freewebheaders.com/
+https://www.flaticon.com/
+https://fontawesome.com/
+https://dev.to/rodrigoodhin/list-of-emojis-hex-codes-35ma
