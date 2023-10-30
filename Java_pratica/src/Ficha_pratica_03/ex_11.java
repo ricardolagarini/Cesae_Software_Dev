@@ -6,32 +6,38 @@ public class ex_11 {
 
     public static void main(String[] args) {
 
-        //Faça um programa que leia um número inteiro e imprima os números pares entre 2 e o número lido inclusive.
-        //Suponha que o número lido da entrada será maior que 2.
-        //Valores lidos: 10 (limite) e 3 (salto)
-        //Saída do algoritmo: 0 3 6 9
+        //Escreva um algoritmo que leia uma quantidade desconhecida de números inteiros positivos fornecidos pelo
+        //utilizador e conte quantos deles estão nos seguintes intervalos: [0.25], [26,50], [51,75] e [76,100]. A entrada de
+        //dados deve terminar quando for lido um número negativo.
 
         Scanner input = new Scanner(System.in);
-        int contador, limite, salto;
+        int numero=1,intervalo1=0, intervalo2=0, intervalo3=0, intervalo4=0;
 
-        contador = 0;
+        while (numero >= 0 ) {
 
-        System.out.print("Insira um limite: ");
-        limite = input.nextInt();
+            System.out.print("Insira um numero de 1 a 100: ");
+            numero = input.nextInt();
 
-        System.out.print("Insira um salto: ");
-        salto = input.nextInt();
-
-
-        while (contador <= limite) {
-            System.out.println(contador);
-            contador= contador+salto;
-
+            if (numero >=0 && numero<=25) {
+                intervalo1 = intervalo1 + 1; //mesma coisa de intervalo++
+            }
+            if (numero >=26 && numero<=50) {
+                intervalo2 = intervalo2 + 1;
+            }
+            if (numero >=51 && numero<=75) {
+                intervalo3 = intervalo3 + 1;
+            }
+            if (numero >=76 && numero<=100) {
+                intervalo4 = intervalo4 + 1;
+            }
 
         }
 
+        System.out.print("\n[0,25]: " + intervalo1);
+        System.out.print("\n[26,50]: " + intervalo2);
+        System.out.print("\n[51,75]: " + intervalo3);
+        System.out.print("\n[76,100]: " + intervalo4);
     }
-
 }
 
 

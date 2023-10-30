@@ -10,23 +10,21 @@ public class ex_08 {
         //deve dizer a média dos números introduzidosv (excluindo o -1).
 
         Scanner input = new Scanner(System.in);
-        int numero, contador, soma, media;
+        int numero, contador=0, soma=0, media;
 
-        contador = 0;
-        soma = 0;
-
-        System.out.print("Insira um numero: ");
+        System.out.print("Insira um numero (-1 para parar): ");
         numero = input.nextInt();
 
         while (numero != -1) {
             contador = contador+1;
             soma = numero + soma;
-            System.out.print("Insira um numero: ");
+            System.out.print("Insira um numero (-1 para parar: ");
             numero = input.nextInt();
         }
 
         System.out.println("\nSua media é:" + soma/contador );
-
-        }
+        System.out.println("Sua soma é:" + soma );
+        System.out.println("Seu contador é:" + contador );
+    }
 
     }

@@ -18,6 +18,5 @@ public class ex_04 {
             System.out.println(inicio);
             inicio = inicio +1;
         }
-
     }
 }

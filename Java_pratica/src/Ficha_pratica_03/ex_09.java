@@ -14,16 +14,12 @@ public class ex_09 {
 
         contador = 0;
 
-
         System.out.print("Insira um numero: ");
         numero = input.nextInt();
 
         while (contador <= numero) {
             System.out.println(contador);
             contador = contador+2;
-
         }
-
     }
-
 }

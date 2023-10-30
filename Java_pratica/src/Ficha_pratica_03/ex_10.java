@@ -12,9 +12,7 @@ public class ex_10 {
         //Saída do algoritmo: 0 3 6 9
 
         Scanner input = new Scanner(System.in);
-        int contador, limite, salto;
-
-        contador = 0;
+        int contador=0, limite, salto;
 
         System.out.print("Insira um limite: ");
         limite = input.nextInt();
@@ -22,16 +20,11 @@ public class ex_10 {
         System.out.print("Insira um salto: ");
         salto = input.nextInt();
 
-
         while (contador <= limite) {
             System.out.println(contador);
             contador= contador+salto;
-
-
         }
-
     }
-
 }
 
 

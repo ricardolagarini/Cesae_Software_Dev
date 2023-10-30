@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class ex_07 {
 
+    //Faça um programa que leia um número inteiro e imprima os 5 anteriores e os 5 seguintes
+    //Por exemplo: Leu 15, deve imprimir: 10 11 12 13 14 16 17 18 19 20
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        int numero, diminui, aumenta;
+        int numero, diminui=-5, aumenta=+5;
 
         System.out.print("Insira um numero: ");
         numero = input.nextInt();
-
-        diminui = numero-5;
-        aumenta = numero+5;
 
         while (diminui < numero) {
             System.out.println(diminui);

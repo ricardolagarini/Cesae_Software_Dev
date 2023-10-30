@@ -13,6 +13,5 @@ public class ex_02 {
             System.out.println(numero);
             numero = numero +2;
         }
-
     }
 }
