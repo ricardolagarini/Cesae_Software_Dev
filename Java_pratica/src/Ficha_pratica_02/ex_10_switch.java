@@ -2,7 +2,7 @@ package Ficha_pratica_02;
 
 import java.util.Scanner;
 
-public class ex_10 {
+public class ex_10_switch {
     public static void main(String[] args) {
 
         // Instanciar o Scanner (obrigatório para todos os exercícios)
