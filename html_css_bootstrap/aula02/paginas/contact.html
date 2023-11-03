@@ -7,109 +7,110 @@
   <title>Sobre</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="/aula02/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-
-  <header>
-    <img src="/aula02/imagens/logo.png" alt="logo_Cesae">
-    <br>
-    <nav>
-      <a href="/aula02/paginas/index.html">Home</a>
-      <a href="softdev.html">Software Dev</a>
-      <a href="/aula02/paginas/about.html">Sobre nós</a>
-    </nav>
-  </header>
-
-
-  <div class="container">
-    <form class="formcont">
-     
-          <div>
-            <label for="form-nome">Nome:</label>
-            <input type="text" name="form-nome" id="form-nome" placeholder="Insira o seu nome" required>
-          </div>
-          <br>
-          <div>
-            <label for="form-email">Email:</label>
-            <input type="email" name="form-email" id="form-email" value="@gmail.com">
-          </div>
-          <br>
-          <div>
-            <label form-tel">Telefone:</label>
-            <input type="tel" name="form-tel" id="form-tel" value="+351">
-          </div>
-          <br>
-          <div>
-            <label for="form-dn">Data de Nascimento</label>
-            <input type="date" name="form-dn" id="form-dn">
-          </div>
-          <br>
-          <div>
-            <label for="form-operadora">Qual a sua operadora de telecom:</label>
-            <br>
-            <input type="radio" name="form-operadora" id="form-operadora-meo">
-            <label for="form-operadora-meo">Meo</label>
-            <br>
-            <input type="radio" name="form-operadora" id="form-operadora-nos">
-            <label for="form-operadora-nos">NOS</label>
-            <br>
-            <input type="radio" name="form-operadora" id="form-operadora-vodafone">
-            <label for="form-operadora-vodafone">Vodafone</label>
-          </div>
-          <br>
-          <div>
-            <label for="form-equipamentos">Selecione os seus equipamentos</label>
-            <br>
-            <input type="checkbox" id="equip1" name="equip1" value="TV">
-            <label for="equip1">Portátil</label>
-            <input type="checkbox" id="equip2" name="equip2" value="PC">
-            <label for="equip2">PC</label>
-            <br>
-            <input type="checkbox" id="equip3" name="equip3" value="DVD">
-            <label for="equip3">Telemovel</label>
-            <input type="checkbox" id="equip4" name="equip4" value="Consola Jogos">
-            <label for="equip4">Consola Jogos</label>
-          </div>
-          <br>
-          <div>
-            <label for="form-curso">Selecione o seu curso</label>
-            <br>
-            <select name="form-curso" id="form-curso">
-              <option value="" disabled selected>Escolha um dos cursos</option>
-              <option value="form-curso-wdm">SoftDeve</option>
-              <option value="Culinária">Culinária</option>
-              <option value="Barman">Barman</option>
-              <option value="Pastelaria">Pastelaria</option>
-            </select>
-          </div>
-          <br>
-          <div>
-            <label for="form-mensagem">Deixe o seu comentário</label>
-            
-            <textarea name="form-mensagem" id="form-mensagem" cols="100" rows="5"></textarea>
-          </div>
-          
-          <div>
-            <input type="reset" value="limpar">
-            <input type="submit" value="Enviar">
-          </div>
-        
-    
-    </form>
-  </div>
-
-
-  <footer class="footer">
-    <a href="https://www.facebook.com/CesaeDigital/?locale=pt_PT" target="_blank"><img src="/aula02/imagens/facebook.png" alt=""></a>
-    <a href="https://www.linkedin.com/home/?originalSubdomain=pt" target="_blank"><img src="/aula02/imagens/linkedin.png" alt=""></a>
-    <a href="https://www.youtube.com/c/cesaedigital" target="_blank"><img src="/aula02/imagens/youtube.png" alt=""></a>
-
-    <h6>&copy;2021 Cesae Digital | Todos os direitos | Desenvolvido por...</h6>
-
-  </footer>
-
-
+  <main>
+    <header>
+      <img src="../imagens/logo.png" alt="logo_Cesae">
+      
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./softdev.html">Software Dev</a>
+        <a href="./about.html">Sobre nós</a>
+        <a href="./contact.html" active="true">Contato</a>
+      </nav>
+    </header>
+    <div class="main-content">
+      <form class="formcont">
+            <div class="inputbox col-span-3">
+              <label for="form-nome">Nome</label>
+              <input type="text" name="form-nome" id="form-nome" placeholder="Insira o seu nome" required>
+            </div>
+            <div class="inputbox col-span-3">
+              <label for="form-email">Email</label>
+              <input type="email" name="form-email" id="form-email" placeholder="email@test.com" value="">
+            </div>
+            <div class="inputbox col-span-3">
+              <label form-tel">Telefone</label>
+              <input type="tel" name="form-tel" id="form-tel" placeholder="+351 000 000 000" value="">
+            </div>
+            <div class="inputbox col-span-3">
+              <label for="form-dn">Data de Nascimento</label>
+              <input type="date" name="form-dn" id="form-dn">
+            </div>
+            <div class="inputbox col-span-12">
+              <label>Qual a sua operadora de telecom</label>
+              <div class="inputbox flex-row">
+                <div class="radio-check-box">
+                  <input type="radio" name="form-operadora" id="form-operadora-meo">
+                  <label for="form-operadora-meo">Meo</label>
+                </div>
+                <div class="radio-check-box">
+                  <input type="radio" name="form-operadora" id="form-operadora-nos">
+                  <label for="form-operadora-nos">NOS</label>
+                </div>
+                <div class="radio-check-box">
+                  <input type="radio" name="form-operadora" id="form-operadora-vodafone">
+                  <label for="form-operadora-vodafone">Vodafone</label>
+                </div>
+              </div>
+            </div>
+            <div class="inputbox col-span-12">
+              <label>Selecione os seus equipamentos</label>
+              <div class="inputbox flex-row">
+                <div class="radio-check-box">
+                  <input type="checkbox" id="equip1" name="equip1" value="TV">
+                  <label for="equip1">Portátil</label>
+                </div>
+                <div class="radio-check-box">
+                  <input type="checkbox" id="equip2" name="equip2" value="PC">
+                  <label for="equip2">PC</label>
+                </div>
+                <div class="radio-check-box">
+                  <input type="checkbox" id="equip3" name="equip3" value="DVD">
+                  <label for="equip3">Telemovel</label>
+                </div>
+                <div class="radio-check-box">
+                  <input type="checkbox" id="equip4" name="equip4" value="Consola Jogos">
+                  <label for="equip4">Consola Jogos</label>
+                </div>
+              </div>
+            </div>
+            <div class="inputbox col-span-12">
+              <label for="form-curso">Selecione o seu curso</label>
+              <select name="form-curso" id="form-curso">
+                <option value="" disabled selected>Escolha um dos cursos</option>
+                <option value="form-curso-wdm">SoftDeve</option>
+                <option value="Culinária">Culinária</option>
+                <option value="Barman">Barman</option>
+                <option value="Pastelaria">Pastelaria</option>
+              </select>
+            </div>
+            <div class="inputbox col-span-12">
+              <label for="form-mensagem">Deixe o seu comentário</label>
+              <textarea name="form-mensagem" id="form-mensagem" cols="100" rows="5"></textarea>
+            </div>
+            <div class="action-container col-span-12">
+              <div class="">
+                <button type="reset">Limpar</button>
+                <button type="submit">Salvar</button>
+              </div>
+            </div>
+      </form>
+    </div>
+    <footer>
+      <nav>
+        <a href="https://www.facebook.com/CesaeDigital/?locale=pt_PT" target="_blank"><img src="../imagens/facebook.png" alt=""></a>
+        <a href="https://www.linkedin.com/home/?originalSubdomain=pt" target="_blank"><img src="../imagens/linkedin.png" alt=""></a>
+        <a href="https://www.youtube.com/c/cesaedigital" target="_blank"><img src="../imagens/youtube.png" alt=""></a>
+      </nav>
+  
+      <h6>&copy;2021 Cesae Digital | Todos os direitos | Desenvolvido por...</h6>
+  
+    </footer>
+  </main>
 </body>
 
 </html>
