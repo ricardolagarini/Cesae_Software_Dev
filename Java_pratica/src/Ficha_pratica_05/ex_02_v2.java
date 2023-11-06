@@ -2,7 +2,8 @@ package Ficha_pratica_05;
 
 import java.util.Scanner;
 
-public class ex_02 {
+public class ex_02_v2 {
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -22,8 +23,8 @@ public class ex_02 {
             totalAnual=totalAnual+comissoes[indice];
         }
 
-       //apresentar o total anual
-       System.out.print("\nValor total das comissôes é de :" + totalAnual );
+        //apresentar o total anual
+        System.out.print("\nValor total das comissôes é de :" + totalAnual );
     }
 }
 
