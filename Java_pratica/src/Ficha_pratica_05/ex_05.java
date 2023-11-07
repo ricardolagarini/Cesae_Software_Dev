@@ -17,7 +17,6 @@ public class ex_05 {
             vetor[indice] = input.nextInt();
         }
 
-
         for (int indice = 0; indice < vetor.length; indice++) {  // vetor.length ajusta a qtd de indices no começo
             soma= soma + vetor[indice];
         }
