@@ -41,9 +41,37 @@ public class ex_03 {
                 return false;
             }
         }
-
         return true;
     }
 
+    /**
+     * Método que avalia se um número é perfeito ou nao
+     * @param num Número a ser avaliado
+     * @return True - se perfeito || False - se não perfeito
+     */
+    public static boolean numeroPerfeito(int num) {
+        int somaDivisores = 0;
+        for (int i = 1; i <= num / 2; i++) {
+            if (num % i == 0) {
+                somaDivisores += i;
+            }
+        }
+        return somaDivisores == num;
+    }
 
+    /**
+     * Método que avalia se um número Triangular ou nao
+     * @param num Número a ser avaliado
+     * @return True - se triangular || False - se não triangular
+     */
+    public static boolean numeroTriangular(int num) {
+        int soma = 0;
+        int i = 1;
+
+        while (soma < num) {
+            soma += i;
+            i++;
+        }
+        return soma == num;
+    }
 }

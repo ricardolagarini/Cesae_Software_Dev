@@ -19,8 +19,8 @@ public class ex_04 {
             System.out.println("1. Par ou Impar");
             System.out.println("2. Positivo ou Negativo");
             System.out.println("3. Primo ou Não Primo");
-            System.out.println("4. ");
-            System.out.println("5. ");
+            System.out.println("4. Perfeito ou Não Perfeito");
+            System.out.println("5. Triangular ou Não Triangular");
             System.out.println("6. Trocar de Número");
             System.out.println("7. Sair");
 
@@ -53,23 +53,32 @@ public class ex_04 {
                     break;
 
                 case 4: // Par && Positivo && Primo
-                    if(par(numero) && positivo(numero) && primo(numero)){
-                        System.out.println("\n***Par, Positivo e Primo ao mesmo tempo***\n");
+                    if(numeroPerfeito(numero)){
+                        System.out.println("\n***Perfeito***\n");
+                    }else{
+                        System.out.println("\n***Não Perfeito***\n");
                     }
                     break;
 
-                case 5: break;
+                case 5: // Triangular ou Nao triangular
+                if(numeroTriangular(numero)){
+                    System.out.println("\n***Triangular***\n");
+                }else{
+                    System.out.println("\n***Não Triangular***\n");
+                }
+                break;
 
                 case 6: // Trocar de Número
-                    break;
+                    System.out.print("Insira um número:");
+                    numero= input.nextInt();
 
                 case 7: // Sair
+                    break;
 
                 default:
                     System.out.println("Opção Inválida!!!");
             }
 
         }while(opcao!=7);
-
     }
 }
