@@ -53,7 +53,7 @@ public class ex_04 {
                     break;
 
                 case 4: // Par && Positivo && Primo
-                    if(numeroPerfeito(numero)){
+                    if(perfeito(numero)){
                         System.out.println("\n***Perfeito***\n");
                     }else{
                         System.out.println("\n***Não Perfeito***\n");
@@ -61,7 +61,7 @@ public class ex_04 {
                     break;
 
                 case 5: // Triangular ou Nao triangular
-                if(numeroTriangular(numero)){
+                if(triangular(numero)){
                     System.out.println("\n***Triangular***\n");
                 }else{
                     System.out.println("\n***Não Triangular***\n");

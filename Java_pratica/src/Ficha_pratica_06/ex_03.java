@@ -44,34 +44,48 @@ public class ex_03 {
         return true;
     }
 
+
     /**
-     * Método que avalia se um número é perfeito ou nao
+     * Método que avalia se um número é ou não perfeito
      * @param num Número a ser avaliado
      * @return True - se perfeito || False - se não perfeito
      */
-    public static boolean numeroPerfeito(int num) {
-        int somaDivisores = 0;
-        for (int i = 1; i <= num / 2; i++) {
-            if (num % i == 0) {
-                somaDivisores += i;
+    public static boolean perfeito(int num){
+
+        int somaDivisores=0;
+
+        for(int divisor=1; divisor<num;divisor++){
+            if(num%divisor==0){
+                somaDivisores+=divisor;
             }
         }
-        return somaDivisores == num;
+
+        if(somaDivisores==num){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     /**
-     * Método que avalia se um número Triangular ou nao
+     * Método que avalia se um número é ou não triangular
      * @param num Número a ser avaliado
      * @return True - se triangular || False - se não triangular
      */
-    public static boolean numeroTriangular(int num) {
-        int soma = 0;
-        int i = 1;
+    public static boolean triangular(int num){
 
-        while (soma < num) {
-            soma += i;
-            i++;
+        int somatorio=0, contador=1;
+
+        while (somatorio<num){
+            somatorio+=contador;
+
+            contador++;
+
+            if(somatorio==num){
+                return true;
+            }
         }
-        return soma == num;
+
+        return false;
     }
 }
