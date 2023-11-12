@@ -23,6 +23,7 @@ public class ex_10 {
         while (contador <= limite) {
             System.out.println(contador);
             contador= contador+salto;
+
         }
     }
 }

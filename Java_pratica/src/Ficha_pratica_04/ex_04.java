@@ -8,11 +8,9 @@ public class ex_04 {
 
         Scanner input = new Scanner(System.in);
 
-        // Declarar variáveis
         int numero;
         boolean primo = true;
 
-        // Ler numero
         System.out.print("Insira um número: ");
         numero= input.nextInt();
 

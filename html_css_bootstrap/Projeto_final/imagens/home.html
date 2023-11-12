@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Projeto_final/estilo/style.css">
+    <link rel="stylesheet" href="/estilo/style.css">
     <link rel="shortcut icon" href="R.ico" type="image/x-icon">
 
 </head>
@@ -34,11 +34,9 @@
                     <li class="nav-item spacenav">
                         <a class="nav-link" style="border-radius: 8px;" aria-current="page" href="#">Home</a>
                     </li>
-
                     <li class="nav-item spacenav">
                         <a class="nav-link" style="border-radius: 8px;" href="#">Nossas delicias</a>
                     </li>
-
                     <li class="nav-item dropdown spacenav">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             style="border-radius: 8px" aria-expanded="false">
@@ -69,26 +67,53 @@
         </div>
     </nav>
 
-<div class="backimg">
-<img src="R.jfif" alt="">
-</div>
+    
 
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner backimg ">
+    <div class="carousel-item active"  style="height: 720px;">
+      <img style="object-fit: cover;" src="1.jfif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item"  style="height: 720px;">
+      <img style="object-fit: cover;" src="2.jpeg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="height: 720px;">
+      <img style="object-fit: cover;" src="3.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 </body>
 
 
 
 <footer class="text-center text-lg-start bg-light text-muted">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <!-- Left -->
-  
-      <!-- Right -->
-      <div>
+     <div>
         <a href="" class="me-4 text-reset">
           <i class="fab fa-facebook-f"></i>
         </a>
@@ -108,11 +133,9 @@
           <i class="fab fa-github"></i>
         </a>
       </div>
-      <!-- Right -->
+     
     </section>
-    <!-- Section: Social media -->
   
-    <!-- Section: Links  -->
     <section class="">
       <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
@@ -121,18 +144,16 @@
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Company name
+              <i class="fas fa-gem me-3"></i>Churrros&CIA
             </h6>
             <p>
               Here you can use rows and columns to organize your footer content. Lorem ipsum
               dolor sit amet, consectetur adipisicing elit.
             </p>
           </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
+          
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
+            
             <h6 class="text-uppercase fw-bold mb-4">
               Products
             </h6>
@@ -149,11 +170,9 @@
               <a href="#!" class="text-reset">Laravel</a>
             </p>
           </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
+         
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
+           
             <h6 class="text-uppercase fw-bold mb-4">
               Useful links
             </h6>
@@ -170,11 +189,9 @@
               <a href="#!" class="text-reset">Help</a>
             </p>
           </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
+       
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
+       
             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
             <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
             <p>
@@ -193,8 +210,8 @@
   
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2023 Copyright:
+      <a style="text-decoration: none;" class="text-reset fw-bold" href="https://www.cesaedigital.pt/">Cesae Digital</a>
     </div>
     <!-- Copyright -->
   </footer>
