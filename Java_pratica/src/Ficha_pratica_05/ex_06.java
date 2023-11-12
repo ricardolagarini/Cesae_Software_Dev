@@ -8,7 +8,7 @@ public class ex_06 {
         Scanner input = new Scanner(System.in);
 
         // declarar variaveis
-        int[] vetor = new int[10];
+        int[] vetor = new int[4];
         boolean crescente = true;
 
         //ler elemento do array []
@@ -17,7 +17,7 @@ public class ex_06 {
             vetor[indice] = input.nextInt();
         }
 
-        for (int indice = 1; indice < vetor.length; indice++) {  // vetor.length ajusta a qtd de indices no começo
+        for (int indice = 1; indice < vetor.length; indice++) {
            if (vetor[indice]<= vetor[indice-1]){
                crescente=false;
             }

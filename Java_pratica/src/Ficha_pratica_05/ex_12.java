@@ -8,9 +8,9 @@ public class ex_12 {
         Scanner input = new Scanner(System.in);
 
         // Declarar variáveis
-        int[] vetor1 = new int[10];
-        int[] vetor2 = new int[10];
-        int[][] matriz = new int[10][2];
+        int[] vetor1 = new int[3];
+        int[] vetor2 = new int[3];
+        int[][] matriz = new int[3][2];
 
         // Ler vetor1
         for (int indice = 0; indice < vetor1.length; indice++) {

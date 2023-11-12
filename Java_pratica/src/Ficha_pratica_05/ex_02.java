@@ -12,13 +12,13 @@ public class ex_02 {
         double totalAnual= 0;
 
         //adicionar comissoes a cada elemento do array []
-        for(int indice=0; indice<=11; indice++){
+        for(int indice=0; indice<comissoes.length; indice++){
             System.out.print("Insira a comissao do mês["+indice+"]:");
             comissoes[indice]= input.nextDouble();
         }
 
         //calcular o total anual
-        for(int indice=0; indice<=11; indice++){
+        for(int indice=0; indice<comissoes.length; indice++){
             totalAnual=totalAnual+comissoes[indice];
         }
 

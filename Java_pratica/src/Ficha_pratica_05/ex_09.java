@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ex_09 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int[][] matriz = new int[5][5];
+        int[][] matriz = new int[2][2];
         int somatorio=0;
 
         // ler matriz

@@ -38,7 +38,6 @@ public class ex_11 {
                 System.out.print(matriz[linha][coluna] + "\t");
             }
             System.out.println();
-
         }
 
         System.out.println("\nMenor:"+menor);

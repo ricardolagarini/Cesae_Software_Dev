@@ -23,7 +23,6 @@ public class ex_07 {
                 maiorpar = vetor[indice];
             }
         }
-
         System.out.print("\nMaior numero par:" + maiorpar);
     }
 }
