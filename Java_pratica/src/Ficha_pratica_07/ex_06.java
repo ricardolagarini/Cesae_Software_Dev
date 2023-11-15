@@ -9,27 +9,18 @@ public class ex_06 {
 
         Scanner fileScanner = new Scanner(new File("Ficheiros/exercicio_06.txt"));
 
-        int maior;
-        String linha = "Joaquim Silva,21";
-        String[]itensDaLinha = linha.split(",");
-
-
-        for(int indice=0;indice<itensDaLinha.length;indice++){
-            System.out.println(itensDaLinha[indice]);
-
-        }
-
-
+        int maior=0;
+        String linha,nomeVelho = "";
 
         while (fileScanner.hasNextLine()) {
-            maior = fileScanner.nextInt();
+            linha=fileScanner.nextLine();
+            String[] itensDaLinha = linha.split(",");
 
-            if(fileScanner.nextInt()> maior){
-                maior = fileScanner.nextInt();
+            if(Integer.parseInt(itensDaLinha[1])>maior){
+                maior=Integer.parseInt(itensDaLinha[1]);
+                nomeVelho = itensDaLinha[0];
             }
-
         }
-
-        System.out.println("A pessoa mais velha é: " + fileScanner.nextInt());
+        System.out.println("A pessoa mais velha é o " + nomeVelho + " com " + maior + " anos de idade.");
     }
 }
