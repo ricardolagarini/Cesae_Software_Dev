@@ -9,7 +9,7 @@ public class ex_10 {
 
         Scanner fileScanner = new Scanner(new File("Ficheiros/exercicio_10.csv"));
 
-        String linha=fileScanner.nextLine();;
+        String linha=fileScanner.nextLine();
         double quantidade_vendida, preco_unitario,total=0;
 
         while(fileScanner.hasNextLine()){

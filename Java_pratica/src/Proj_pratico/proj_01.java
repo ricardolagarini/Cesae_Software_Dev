@@ -7,7 +7,7 @@ public class proj_01 {
     public static void main(String[] args) throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
-        String opcaoUsuario;
+        String opcaoUsuario, matriz="";
 
 
         do {
@@ -27,6 +27,6 @@ public class proj_01 {
             }
 
 
-        } while (!opcaoUsuario.equals("ADMIN");
+        }while (opcaoUsuario.equals(matriz));
     }
 }
