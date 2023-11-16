@@ -50,7 +50,6 @@ public class ex_11 {
         return contagemColunas;
     }
 
-
     /**
      * Método que armazena numa matriz o conteudo de um ficheiro
      *
@@ -84,9 +83,7 @@ public class ex_11 {
             }
 
             linhaMatriz++;
-
         }
-
         return matrizTotal;
     }
 
@@ -196,7 +193,6 @@ public class ex_11 {
                 System.out.println();
             }
         }
-
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -208,7 +204,6 @@ public class ex_11 {
         String[][] matrizTotal = lerFicheiroParaMatriz("Ficheiros/exercicio_11.csv");
 
         //imprimirMatrizConsola(matrizTotal);
-
 
         do {
             System.out.println("\n\n****** Programa de Analisar Músicas ******");
@@ -276,7 +271,5 @@ public class ex_11 {
 
             }
         } while (opcao != 0);
-
     }
-
 }
