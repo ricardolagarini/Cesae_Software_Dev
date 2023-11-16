@@ -16,14 +16,11 @@ public class Biblioteca_proj {
 
         File ficheiro = new File(caminhoFicheiro);
         Scanner scanner = new Scanner(ficheiro);
-
         int contagemLinhas = 0;
-
         while (scanner.hasNextLine()) {
             scanner.nextLine();
             contagemLinhas++;
         }
-
         return contagemLinhas;
     }
 
@@ -38,14 +35,10 @@ public class Biblioteca_proj {
 
         File ficheiro = new File(caminhoFicheiro);
         Scanner scanner = new Scanner(ficheiro);
-
         int contagemColunas = 0;
-
         String linha = scanner.nextLine();
         String[] itensLinha = linha.split(delimitador);
-
         contagemColunas = itensLinha.length;
-
         return contagemColunas;
     }
 
@@ -76,29 +69,58 @@ public class Biblioteca_proj {
         while (scanner.hasNextLine()) {
             linhaAtual = scanner.nextLine();
             String[] itensLinha = linhaAtual.split(";");
-
             for (int i = 0; i < itensLinha.length; i++) {
                 matrizTotal[linhaMatriz][i] = itensLinha[i];
             }
-
             linhaMatriz++;
         }
         return matrizTotal;
     }
 
     /**
-     * Método para imprimir uma matriz na consola
+     * Método para listar jogos do ficheiro
      *
-     * @param matriz Matriz a imprimir
+     * @param matrizTotal Matriz a pesquisar
      */
-    public static void imprimirMatrizConsola(String[][] matriz) {
-        for (int linha = 0; linha < matriz.length; linha++) {
-            for (int coluna = 0; coluna < matriz[0].length; coluna++) {
-                System.out.print(matriz[linha][coluna] + "\t|\t");
+    public static void listarJogosFicheiro(String[][] matrizTotal) {
+        boolean confirmaJogo = true;
+        for (int linha = 0; linha < matrizTotal.length; linha++) {
+            for (int coluna = 0; coluna < matrizTotal.length; coluna++) {
+                if (linha != coluna && matrizTotal[linha][7].equals(matrizTotal[coluna][7])) {
+                    confirmaJogo = false;
+                }
             }
-            System.out.println();
+            if (confirmaJogo) {
+                System.out.println("Jogo: " + matrizTotal[linha][7]);
+            } else {
+                confirmaJogo = true;
+            }
         }
     }
+
+    /**
+     * Método para Procurar vagas de estacionamento diposniveis
+     *
+     * @param matrizTotal Matriz a pesquisar
+     */
+    public static void listarVagas(String[][] matrizTotal) {
+        int somatorio=0, contador=1, limite=121;
+        while (somatorio<=limite){
+            somatorio+=contador;
+            contador++;
+            if(somatorio % 5 == 0){
+                System.out.println("Vaga " + somatorio + " está disponivel ");
+            }
+        }
+    }
+
+
+
+
+
+
+
+
 
 
 
