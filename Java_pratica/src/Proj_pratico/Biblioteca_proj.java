@@ -115,11 +115,24 @@ public class Biblioteca_proj {
     }
 
 
+    /**
+     * Registo de cliente
+     *
+     *
+     */
+    public static void registoCliente(Scanner input) {
+        String nomeUsuario, emailUsuario, contactoUsuario;
 
-
-
-
-
+        System.out.print("Insira seu nome: ");
+        input.nextLine(); // limpar campo
+        nomeUsuario = input.nextLine();
+        System.out.print("Insira seu contacto: ");
+        contactoUsuario = input.nextLine();
+        System.out.print("Insira seu email: ");
+        emailUsuario = input.nextLine();
+        System.out.println("\nCliente Inserido com Sucesso!");
+        System.out.println(nomeUsuario + " | " + contactoUsuario + " | " + emailUsuario + "\n");
+    }
 
 
 

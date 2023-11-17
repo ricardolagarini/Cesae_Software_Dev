@@ -11,20 +11,18 @@ public class proj_01 {
         String[][] matrizTotal = lerFicheiroParaMatriz("Ficheiros/GameStart_V2.csv");
 
         Scanner input = new Scanner(System.in);
-        int opcaoUsuario,opcaoCliente=0 ;
-        String nomeUsuario,emailUsuario,contactoUsuario,nomeJogo;
+        int opcaoCliente=0 ;
+        String opcaoUsuario, password;
 
         do {
-            System.out.print("(ADMIN ou CLIENTE): ");
-            System.out.println("\n\n****** GAMESTART ******");
-            System.out.println("1. ADMIN");
-            System.out.println("2. CLIENTE");
-            System.out.print("Insira seu tipo de login: ");
-            opcaoUsuario = input.nextInt();
+            System.out.print("Tipo de utilizador (ADMIN ou CLIENTE): ");
+            opcaoUsuario = input.nextLine();
 
+            if (opcaoUsuario.equals("ADMIN")) {
+                System.out.print("Digite a password: ");
+                password = input.nextLine();
 
-            switch (opcaoUsuario) {
-                case 1:
+                if (password.equals("123")) {
                     System.out.println("\n\n****** MENU ADMIN ******");
                     System.out.println("1. Imprima o seu conteúdo na consola");
                     System.out.println("2. Imprima quantas vendas foram executadas e o seu valor total");
@@ -34,10 +32,14 @@ public class proj_01 {
                     System.out.println("0. Sair");
                     System.out.print("Insira a opção desejada: ");
                     int opcaoAdmin = input.nextInt();
-                    break;
+                } else {
+                    System.out.println("Senha invalida!");
+                }
 
-                case 2:
-                    do{
+
+            } else if (opcaoUsuario.equals("CLIENTE")) {
+
+                do {
                     System.out.println("\n\n****** MENU CLIENTE ******");
                     System.out.println("1. Registo de cliente");
                     System.out.println("2. Procurar estacionamento");
@@ -48,41 +50,27 @@ public class proj_01 {
                     opcaoCliente = input.nextInt();
 
                     switch (opcaoCliente) {
-                        case 1: // Fazer registo do cliente
+                        case 1:
                             System.out.println("\n****** REGISTO DE CLIENTE ******");
-                            System.out.print("Insira seu nome: ");
-                            input.nextLine(); // limpar campo
-                            nomeUsuario = input.nextLine();
-                            System.out.print("Insira seu contacto: ");
-                            contactoUsuario = input.nextLine();
-                            System.out.print("Insira seu email: ");
-                            emailUsuario = input.nextLine();
-                            System.out.println("\nCliente Inserido com Sucesso!");
-                            System.out.println(nomeUsuario + " | " + contactoUsuario + " | " + emailUsuario + "\n");
-
-                            // Retornar para o menu do cliente
-                            opcaoCliente = -1;
+                            registoCliente(input);
                             break;
 
-
-                        case 2: // Procurar vagas de estacionamento diposniveis
+                        case 2:
                             System.out.println("\n****** ESTACIONAMENTO ******");
                             listarVagas(matrizTotal);
                             break;
 
-                        case 3: // Listar jogos do ficheiro
+                        case 3:
                             System.out.println("\n****** LISTA DE JOGOS ******");
                             listarJogosFicheiro(matrizTotal);
                             break;
 
-                        case 4: // Listar jogos pesquisando pela editora no ficheiro separados por categoria
+                        case 4:
                             System.out.println("\n****** JOGOS POR CATEGORIA ******");
-
                             System.out.print("Editora a pesquisar: ");
                             input.nextLine();
-                            String editora= input.nextLine();
+                            String editora = input.nextLine();
                             for (int linha = 0; linha < matrizTotal.length; linha++) {
-
                                 if (matrizTotal[linha][5].equals(editora)) {
                                     System.out.println("Jogo: " + matrizTotal[linha][7] + "\t" + "Categoria: " + matrizTotal[linha][6]);
                                 }
@@ -97,16 +85,14 @@ public class proj_01 {
                             System.out.println("\nOpção inválida!");
                     }
 
-                }while (opcaoCliente!=0);
+                } while (opcaoCliente != 0);
 
-                    break;
-
-                default:
-                    System.out.println("\nTipo de utilizador inválido!");
-                    System.out.println("Selecione 1 para ADMIN ou 2 para CLIENTE\n");
+                break;
+            } else {
+                System.out.println("Tipo de usuario inválido!");
+                break;
             }
 
-
-        }while (opcaoUsuario<1||opcaoUsuario>2);
+        } while (!opcaoUsuario.equals("ADMIN") && !opcaoUsuario.equals("CLIENTE"));
     }
 }
