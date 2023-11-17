@@ -42,7 +42,14 @@
 }
 
 
-
+.alinharfooter{
+    padding: 6px;
+    text-align: center;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.815);
+    background-color:  rgba(170, 11, 91, 0.404);
+    font-weight: bold;
+}
 
 
 
