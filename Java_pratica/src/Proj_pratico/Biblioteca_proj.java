@@ -84,6 +84,7 @@ public class Biblioteca_proj {
      */
     public static void listarJogosFicheiro(String[][] matrizTotal) {
         boolean confirmaJogo = true;
+
         for (int linha = 0; linha < matrizTotal.length; linha++) {
             for (int coluna = 0; coluna < matrizTotal.length; coluna++) {
                 if (linha != coluna && matrizTotal[linha][7].equals(matrizTotal[coluna][7])) {
