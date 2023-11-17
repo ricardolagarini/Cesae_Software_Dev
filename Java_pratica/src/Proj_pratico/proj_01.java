@@ -72,7 +72,7 @@ public class proj_01 {
                             String editora = input.nextLine();
                             for (int linha = 0; linha < matrizTotal.length; linha++) {
                                 if (matrizTotal[linha][5].equals(editora)) {
-                                    System.out.println("Jogo: " + matrizTotal[linha][7] + "\t" + "Categoria: " + matrizTotal[linha][6]);
+                                    System.out.println("Categoria: " + matrizTotal[linha][6] +  " - " + matrizTotal[linha][7]);
                                 }
                             }
                             break;
