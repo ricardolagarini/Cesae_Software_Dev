@@ -11,10 +11,10 @@ public class Main {
 
         //c. No método main, crie um objeto dessa classe e invoque os métodos para aumentar o salário em 10% e exibir os dados do funcionário
 
-        Funcionario roberto = new Funcionario("Roberto", 1400, "Fiscal");
+        Funcionario roberto = new Funcionario("Roberto", 1000, "Fiscal");
 
         roberto.exibirDados();
-        roberto.aumentarSalario();
+        roberto.aumentarSalario(50);
         roberto.exibirDados();
 
     }

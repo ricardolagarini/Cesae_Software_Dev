@@ -35,7 +35,11 @@ public class Livro {
 
 
     public void exibirDetalhes(){
-        System.out.println("Detalhes do livro - "+"Titulo: "+this.titulo +" | "+ "Autor: "+this.autor+" | "+"Categoria: "+categoria+" | "+"N. Paginas: "+numero_paginas+" | "+"ISBN: "+isbn);
+        System.out.println("Titulo: "+this.titulo);
+        System.out.println("Autor: "+this.autor);
+        System.out.println("Categoria: "+categoria);
+        System.out.println("N. Paginas: "+numero_paginas);
+        System.out.println("ISBN: "+isbn+"\n");
     }
 
 

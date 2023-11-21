@@ -25,9 +25,9 @@ public class Funcionario {
     }
 
 
-    public void aumentarSalario() {
-        double aumento = this.salario * 0.1;
-        this.salario += aumento;
+    public void aumentarSalario(double porcentagemAumento) {
+        this.salario = this.salario*(1+(porcentagemAumento/100));
+
     }
 
     public void exibirDados() {

@@ -14,19 +14,12 @@ public class Main {
         //d. Invoque o método para comprar 10 unidades.
         //e. Invoque o método para vender 35 unidades
 
-
         Produto bacalhau = new Produto("Bacalhau", 10);
 
-
-
         bacalhau.comprar(5);
-
-
-
-
-
-
-
+        bacalhau.vender(2);
+        bacalhau.comprar(10);
+        bacalhau.vender(35);
 
     }
 }
