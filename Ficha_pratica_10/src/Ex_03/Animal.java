@@ -17,18 +17,20 @@ public class Animal {
         this.alimentacao = alimentacao;
     }
 
-
     public void comer(String alimento, double pesoRefeicao){
-
-       // if(this.alimentacao.equals(alimento))
-
+        for(int i=0;i<alimentacao.length;i++) {
+            if (alimentacao[i].equals(alimento)){
+                this.peso+= pesoRefeicao/1000;
+                System.out.println("O "+this.especie+ " "+this.nome+" comeu "+alimento);
+                return; // finaliza o ciclo
+            }
+        }
+        System.out.println("O "+this.especie+ " "+this.nome+" não comeu "+alimento);
     }
 
-
-
-
-
-
+    public void exibirDetalhes() {
+        System.out.println("O "+this.especie+" "+this.nome+" pesa "+this.peso);
+    }
 
 
 
