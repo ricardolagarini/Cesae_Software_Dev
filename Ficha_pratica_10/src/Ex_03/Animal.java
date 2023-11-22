@@ -29,7 +29,7 @@ public class Animal {
     }
 
     public void exibirDetalhes() {
-        System.out.println("O "+this.especie+" "+this.nome+" pesa "+this.peso);
+        System.out.println("O "+this.especie+" "+this.nome+" pesa "+this.peso+" Kg");
     }
 
 
