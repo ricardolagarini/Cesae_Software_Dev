@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Sorteio {
 
-   private double premio;
+    private double premio;
     private ArrayList<Pessoas> participantes;
 
 
