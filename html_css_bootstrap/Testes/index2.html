@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <link id="theme-link" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .typing-text {
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto;
+      font-size: 24px;
+      display: inline-block;
+      position: relative;
+    }
+    .typing-text:before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background-color: orange;
+      animation: typing-bar 2.5s steps(40, end), blink-caret .5s step-end infinite;
+    }
+    @keyframes typing-bar {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    @keyframes blink-caret {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: orange;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1>Bem-vindo ao Meu Portfólio!</h1>
+    <p>Aqui estão alguns dos meus projetos como desenvolvedor.</p>
+    <p>Conheça meu trabalho:</p>
+    <div id="typing-container">
+      <div id="typing-text" class="typing-text"></div>
+    </div>
+  </div>
+
+  <div class="fixed-top" style="text-align: right; padding: 10px;">
+    <button id="theme-toggle" class="btn btn-link text-dark">Modo Escuro</button>
+  </div>
+
+  <script>
+    const texts = [
+      'Hello World!',
+      'Dev jr....',
+      'Ricardo Pastor!'
+    ];
+
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+
+    function type() {
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.getElementById('typing-text').textContent = letter;
+
+      // Atualizar a largura da barra laranja
+      const typingBar = document.querySelector('.typing-text:before');
+      typingBar.style.width = `${(index / currentText.length) * 100}%`;
+
+      if (letter.length === currentText.length) {
+        setTimeout(erase, 1500);
+      } else {
+        setTimeout(type, 100);
+      }
+    }
+
+    function erase() {
+      letter = currentText.slice(0, --index);
+      document.getElementById('typing-text').textContent = letter;
+
+      // Atualizar a largura da barra laranja
+      const typingBar = document.querySelector('.typing-text:before');
+      typingBar.style.width = `${(index / currentText.length) * 100}%`;
+
+      if (letter.length === 0) {
+        count++;
+        if (count === texts.length) {
+          count = 0;
+        }
+        setTimeout(type, 500);
+      } else {
+        setTimeout(erase, 50);
+      }
+    }
+
+    type();
+
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeLink = document.getElementById('theme-link');
+
+    themeToggle.addEventListener('click', function() {
+      if (themeLink.getAttribute('href') === 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') {
+        themeLink.setAttribute('href', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+        themeToggle.textContent = 'Modo Escuro';
+      } else {
+        themeLink.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
+        themeToggle.textContent = 'Modo Normal';
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
