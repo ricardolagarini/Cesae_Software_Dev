@@ -23,7 +23,7 @@ public class BarcoPesca {
         this.mariscoPescado = new ArrayList<>();
     }
 
-    public double getCargaAtual() {
+    public double getCargaAtual() { // nao entendi de onde veio peixeAtual e pq usar get no metodo
         double cargaAtual = 0;
 
         for (Peixe peixeAtual : this.peixesPescados) {
@@ -80,7 +80,7 @@ public class BarcoPesca {
         this.mariscoPescado.remove(index);
     }
 
-    public double calcularPrecoTotal(){
+    public double calcularPrecoTotal(){ // nao entendi de onde veio peixeAtual
         double precoTotal=0;
 
         for(Peixe peixeAtual : this.peixesPescados){

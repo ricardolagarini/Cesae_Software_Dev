@@ -4,135 +4,149 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Portfólio</title>
-  <link id="theme-link" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link id="theme-link" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .typing-text {
-      overflow: hidden;
-      white-space: nowrap;
-      margin: 0 auto;
-      font-size: 24px;
-      display: inline-block;
-      position: relative;
+    body.dark-mode {
+      background-color: #1f1f1f;
+      color: #ffffff;
     }
-    .typing-text:before {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 0;
-      height: 4px;
-      background-color: orange;
-      animation: typing-bar 2.5s steps(40, end), blink-caret .5s step-end infinite;
+    .navbar-dark .navbar-nav .nav-link {
+      color: #ffffff !important;
     }
-    @keyframes typing-bar {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
+    .footer {
+      background-color: #111;
+      color: #ffffff;
     }
-    @keyframes blink-caret {
-      from, to {
-        border-color: transparent;
-      }
-      50% {
-        border-color: orange;
-      }
+
+    body.light-mode {
+      background-color: #ffffff;
+      color: #333333;
+    }
+    .navbar-light .navbar-nav .nav-link {
+      color: #333333 !important;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      color: #333333;
+    }
+    .experience {
+      margin-bottom: 30px;
+    }
+    .developer-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
     }
   </style>
 </head>
-<body>
+<body class="light-mode">
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Meu Portfólio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Início</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Projetos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Web</a>
+              <a class="dropdown-item" href="#">Mobile</a>
+              <a class="dropdown-item" href="#">Outros</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contato</a>
+          </li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="btn btn-link text-light">Modo Escuro</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <div class="container mt-5">
-    <h1>Bem-vindo ao Meu Portfólio!</h1>
-    <p>Aqui estão alguns dos meus projetos como desenvolvedor.</p>
-    <p>Conheça meu trabalho:</p>
-    <div id="typing-container">
-      <div id="typing-text" class="typing-text"></div>
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Bem-vindo ao Meu Portfólio!</h1>
+        <p>Aqui está uma amostra dos meus projetos como desenvolvedor.</p>
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Projeto 1</h5>
+              <p class="card-text">Descrição do projeto 1.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Projeto 2</h5>
+              <p class="card-text">Descrição do projeto 2.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Projeto 3</h5>
+              <p class="card-text">Descrição do projeto 3.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="https://via.placeholder.com/500" alt="Desenvolvedor" class="developer-img">
+      </div>
+    </div>
+
+    <div class="experience mt-5">
+      <h2>Experiência Profissional</h2>
+      <ul>
+        <li>Empresa A - Desenvolvedor Web</li>
+        <li>Empresa B - Desenvolvedor Frontend</li>
+      </ul>
+    </div>
+
+    <div class="experience">
+      <h2>Educação</h2>
+      <ul>
+        <li>Universidade X - Bacharelado em Ciência da Computação</li>
+        <li>Cursos Online em Desenvolvimento Web</li>
+      </ul>
     </div>
   </div>
 
-  <div class="fixed-top" style="text-align: right; padding: 10px;">
-    <button id="theme-toggle" class="btn btn-link text-dark">Modo Escuro</button>
-  </div>
+  <footer class="footer text-center py-3">
+    © 2023 Meu Portfólio
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
-    const texts = [
-      'Hello World!',
-      'Dev jr....',
-      'Ricardo Pastor!'
-    ];
-
-    let count = 0;
-    let index = 0;
-    let currentText = '';
-    let letter = '';
-
-    function type() {
-      currentText = texts[count];
-      letter = currentText.slice(0, ++index);
-
-      document.getElementById('typing-text').textContent = letter;
-
-      // Atualizar a largura da barra laranja
-      const typingBar = document.querySelector('.typing-text:before');
-      typingBar.style.width = `${(index / currentText.length) * 100}%`;
-
-      if (letter.length === currentText.length) {
-        setTimeout(erase, 1500);
-      } else {
-        setTimeout(type, 100);
-      }
-    }
-
-    function erase() {
-      letter = currentText.slice(0, --index);
-      document.getElementById('typing-text').textContent = letter;
-
-      // Atualizar a largura da barra laranja
-      const typingBar = document.querySelector('.typing-text:before');
-      typingBar.style.width = `${(index / currentText.length) * 100}%`;
-
-      if (letter.length === 0) {
-        count++;
-        if (count === texts.length) {
-          count = 0;
-        }
-        setTimeout(type, 500);
-      } else {
-        setTimeout(erase, 50);
-      }
-    }
-
-    type();
-
     const themeToggle = document.getElementById('theme-toggle');
-    const themeLink = document.getElementById('theme-link');
+    const body = document.body;
 
     themeToggle.addEventListener('click', function() {
-      if (themeLink.getAttribute('href') === 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') {
-        themeLink.setAttribute('href', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
-        document.body.style.backgroundColor = 'white';
-        document.body.style.color = 'black';
-        themeToggle.textContent = 'Modo Escuro';
-      } else {
-        themeLink.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
-        document.body.style.backgroundColor = 'black';
-        document.body.style.color = 'white';
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
         themeToggle.textContent = 'Modo Normal';
+      } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        themeToggle.textContent = 'Modo Escuro';
       }
     });
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
