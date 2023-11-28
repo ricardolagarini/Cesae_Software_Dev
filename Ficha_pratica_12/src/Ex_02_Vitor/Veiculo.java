@@ -1,8 +1,7 @@
-package Ex_02;
-
-import Ex_02.Enums.TipoCombustivel;
+package Ex_02_Vitor;
 
 public class Veiculo {
+
     private String marca;
     private String modelo;
     private int anoFabrico;
@@ -10,7 +9,6 @@ public class Veiculo {
     private int cilindrada;
     private TipoCombustivel tipoCombustivel;
     private double consumo;
-
 
     public Veiculo(String marca, String modelo, int anoFabrico, int potencia, int cilindrada, TipoCombustivel tipoCombustivel, double consumo) {
         this.marca = marca;
@@ -30,15 +28,6 @@ public class Veiculo {
         return modelo;
     }
 
-    public double getConsumo() {
-        return consumo;
-    }
-
-
-    public TipoCombustivel getTipoCombustivel() {
-        return tipoCombustivel;
-    }
-
     public void setPotencia(int potencia) {
         this.potencia = potencia;
     }
@@ -47,35 +36,38 @@ public class Veiculo {
         this.consumo = consumo;
     }
 
+    public TipoCombustivel getTipoCombustivel() {
+        return tipoCombustivel;
+    }
 
-    public Veiculo corrida(Veiculo adversario){
-        if(this.potencia>adversario.potencia){
+    public Veiculo corrida(Veiculo adversario) {
+        if (this.potencia > adversario.potencia) {
             // Ganha o meu carro por potencia
             return this; // Devolve o meu carro (objeto que invocou o método)
-        }else{
+        } else {
 
-            if(this.potencia<adversario.potencia){
+            if (this.potencia < adversario.potencia) {
                 // Ganha o adversario por potencia
                 return adversario;
-            }else{
+            } else {
                 // Empate de potencia
-                if(this.cilindrada>adversario.cilindrada){
+                if (this.cilindrada > adversario.cilindrada) {
                     // Ganha o meu carro por cilindrada
                     return this;
-                }else{
+                } else {
 
-                    if(this.cilindrada<adversario.cilindrada){
+                    if (this.cilindrada < adversario.cilindrada) {
                         // Ganha o adversario por cilindrada
                         return adversario;
-                    }else{
+                    } else {
                         // Empate de cilindrada
 
-                        if(this.anoFabrico>adversario.anoFabrico){
+                        if (this.anoFabrico > adversario.anoFabrico) {
                             // Ganha o meu carro por idade
                             return this;
-                        }else{
+                        } else {
 
-                            if(this.anoFabrico<adversario.anoFabrico){
+                            if (this.anoFabrico < adversario.anoFabrico) {
                                 // Ganha o adversario por idade
                                 return adversario;
                             }
@@ -84,8 +76,15 @@ public class Veiculo {
                 }
             }
         }
-
         return null;
+    }
+
+    public void exibirDetalhes() {
+        System.out.println(this.marca);
+        System.out.println(this.modelo);
+        System.out.println("Ano: " + this.anoFabrico);
+        System.out.println("Potencia: " + this.potencia + " cv.");
+        System.out.println("Cilindrada: " + this.cilindrada + " cc.");
     }
 
     public void ligar() {
@@ -110,67 +109,32 @@ public class Veiculo {
                 System.out.println("O carro está ligado!");
                 System.out.println("VRUMMMMMMMMMMMMMMMMMMMM");
             }
-
         }
     }
 
     // Temperatura é um modificador externo (não faz parte das caracteristicas do carro)
     // Não faz parte da ficha
-    public void ligarComTemperatura(double temperatura){
+    public void ligarComTemperatura(double temperatura) {
 
-        if(temperatura>10){ // Liga com calor
+        if (temperatura > 10) { // Liga com calor
 
-            if(this.potencia>250){
+            if (this.potencia > 250) {
                 System.out.println("VRUMVRUMVRUM... VRUMMMMMMM!!");
-            }else{
+            } else {
                 System.out.println("vrumvrumvrum... vrummmmm...");
             }
 
-        }else{ // Liga com frio
+        } else { // Liga com frio
 
-            if(this.potencia>250){
+            if (this.potencia > 250) {
                 System.out.println("Custa um pouco... VRUMVRUMVRUMVRUMVRUMVRUM... VRUMMMMMMM!!");
-            }else{
+            } else {
                 System.out.println("Custa um pouco... vrumvrumvrumvrumvrum... vrummmmm...");
             }
-
         }
     }
-
-    public void exibirDetalhes(){
-        System.out.println(this.marca);
-        System.out.println(this.modelo);
-        System.out.println("Ano: "+this.anoFabrico);
-        System.out.println("Potencia: "+ this.potencia+ " cv.");
-        System.out.println("Cilindrada: "+this.cilindrada+" cc.");
-    }
-
-    public void calcularCusto(double distancia) {
-        double combustivelatual=0;
-        if (getTipoCombustivel().equals(TipoCombustivel.DIESEL)) {
-            combustivelatual = 1.95;
-            combustivelatual =((combustivelatual*getConsumo())/100)*distancia;
-
-        } else if (getTipoCombustivel().equals(TipoCombustivel.GASOLINA)) {
-            combustivelatual = 2.10;
-            combustivelatual =((combustivelatual*getConsumo())/100)*distancia;
-
-        }   else if (getTipoCombustivel().equals(TipoCombustivel.GPL)) {
-            combustivelatual = 1.15;
-            combustivelatual =((combustivelatual*getConsumo())/100)*distancia;
-        }   else if (getTipoCombustivel().equals(TipoCombustivel.ELETRICO)) {
-            combustivelatual = 0.12;
-            combustivelatual = ((combustivelatual * getConsumo()) / 100) * distancia;
-        }
-
-        System.out.println("O consumo do "+getModelo() +" é de "+combustivelatual+"EUR para uma viagem de "+distancia + " km");
-    }
-
 
     public double calcularConsumo(double distancia) {
         return (this.consumo * distancia) / 100;
     }
-
-
-
 }
