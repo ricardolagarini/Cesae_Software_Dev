@@ -44,6 +44,6 @@ public class Main {
 
         System.out.println("Kcal Pizza Portugal: "+pizzaPortugal.calcularKCal());
 
-
+        pizzaPortugal.exibirDetalhes();
     }
 }

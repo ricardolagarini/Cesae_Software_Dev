@@ -59,9 +59,7 @@ public class Pizza {
                 this.composicao.remove(ingredientePizzaAtual);
                 return;
             }
-
         }
-
     }
 
     public double calcularKCal(){
@@ -79,6 +77,23 @@ public class Pizza {
         }
 
         return kcalTotais;
+    }
+
+    public void exibirDetalhes() { //passo 1
+        int contador = 1;
+
+        System.out.println("****** " + this.nome + " ******");
+        System.out.println("Código: " + this.codigo);
+        System.out.println("Descrição: " + this.descricao);
+        System.out.println("Preço: " + this.preco + "€");
+        System.out.println("Tamanho: " + this.tamanho);
+
+        //passo 2
+        for (IngredientePizza ingredientePizzaAtual : this.composicao) { //for para percorrer o arraylist
+            System.out.print("Ingrediente " + contador++ + ": "); // Para mostrar numero ingrediente
+            ingredientePizzaAtual.exibirDetalhes(); // usa exibir do passo 3
+        }
+        System.out.println();
     }
 
 
