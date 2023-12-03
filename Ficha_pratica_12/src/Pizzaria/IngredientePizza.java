@@ -1,5 +1,7 @@
 package Pizzaria;
 
+import Pizzaria.Ingredientes.Ingrediente;
+
 public class IngredientePizza {
     private Ingrediente ingrediente;
     private double quantidade;
@@ -21,7 +23,6 @@ public class IngredientePizza {
         this.quantidade = quantidade;
     }
 
-    //passo 3
     public void exibirDetalhes(){
         this.ingrediente.exibirDetalhes(); // vai listar Ingrediente(String codigo, String nome, UnidadeMedida medidaIngrediente, double kcalUnidadeMedida)
         System.out.print(" : "+this.quantidade+" ");
@@ -40,7 +41,4 @@ public class IngredientePizza {
                 break;
         }
     }
-
-
-
 }

@@ -1,5 +1,5 @@
 package Pizzaria.Enums;
 
 public enum TipoCarne {
-    PORCO, VACA, CHOURICO, FRANGO
+    PORCO,VACA,FRANGO,CHOURICO
 }
