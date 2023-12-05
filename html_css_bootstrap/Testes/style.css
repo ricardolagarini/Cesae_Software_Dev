@@ -4,15 +4,15 @@
 
 }
 
-
-
 body.dark-mode {
   background-color: #1f1f1f;
   color: #ffffff;
 }
+
 .navbar-dark .navbar-nav .nav-link {
   color: #ffffff !important;
 }
+
 .footer {
   background-color: #111;
   color: #ffffff;
@@ -63,6 +63,14 @@ body.light-mode {
   animation: slide 6s steps(3) infinite;
   animation-name: slide;
 }
+
+
+
+.body.dark-mode.texto-dinamico li::after {
+  background-color: #380606;
+}
+
+
 
 
 .texto-dinamico li::after {
