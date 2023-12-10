@@ -2,5 +2,5 @@ package Ex_03.Enums;
 
 public enum AreaFormacao {
 
-    Informatica, Economia, Contabilidade, Medicina
+    INFORMATICA,ECONOMIA,CONTABILIDADE,MEDICINA,DIREITO,BIOLOGIA
 }

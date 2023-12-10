@@ -1,0 +1,32 @@
+2023-12-06T12:19:39.182613900: Inicio do Programa
+2023-12-06T12:19:39.193139500: x: 20
+2023-12-06T12:19:39.193139500: y: 15
+2023-12-06T12:19:39.194138100: Objeto “mercedes” da Classe Carro criado com sucesso
+2023-12-06T12:19:39.194138100: Objeto “ferrari” da Classe Carro criado com sucesso
+2023-12-06T12:20:49.578722500: Inicio do Programa
+2023-12-06T12:20:49.589231400: x: 20
+2023-12-06T12:20:49.589231400: y: 15
+2023-12-06T12:20:49.589231400: Objeto “mercedes” da Classe Carro criado com sucesso
+2023-12-06T12:20:49.589231400: Objeto “ferrari” da Classe Carro criado com sucesso
+2023-12-06T12:20:49.590524500: Estou a tentar criar outro ficheiro de log...
+2023-12-06T12:20:49.590524500: w: 1152023-12-09T23:26:38.091779900: Inicio do Programa
+2023-12-09T23:26:38.099786800: x: 20
+2023-12-09T23:26:38.099786800: y: 15
+2023-12-09T23:26:38.100788300: Objeto “mercedes” da Classe Carro criado com sucesso
+2023-12-09T23:26:38.100788300: Objeto “ferrari” da Classe Carro criado com sucesso
+2023-12-09T23:26:38.100788300: Estou a tentar criar outro ficheiro de log...
+2023-12-09T23:26:38.100788300: w: 115
+2023-12-09T23:26:46.496483900: Inicio do Programa
+2023-12-09T23:26:46.504482200: x: 20
+2023-12-09T23:26:46.504482200: y: 15
+2023-12-09T23:26:46.504482200: Objeto “mercedes” da Classe Carro criado com sucesso
+2023-12-09T23:26:46.505492500: Objeto “ferrari” da Classe Carro criado com sucesso
+2023-12-09T23:26:46.505492500: Estou a tentar criar outro ficheiro de log...
+2023-12-09T23:26:46.505492500: w: 115
+2023-12-09T23:26:56.217789900: Inicio do Programa
+2023-12-09T23:26:56.225802400: x: 20
+2023-12-09T23:26:56.225802400: y: 15
+2023-12-09T23:26:56.226804500: Objeto “mercedes” da Classe Carro criado com sucesso
+2023-12-09T23:26:56.226804500: Objeto “ferrari” da Classe Carro criado com sucesso
+2023-12-09T23:26:56.227797400: Estou a tentar criar outro ficheiro de log...
+2023-12-09T23:26:56.227797400: w: 11emfe5

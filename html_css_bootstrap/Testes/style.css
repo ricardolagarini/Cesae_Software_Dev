@@ -52,7 +52,6 @@ body.light-mode {
 }
 
 
-
 .texto-dinamico li {
   margin-left: 10px;
   list-style: none;
@@ -65,12 +64,9 @@ body.light-mode {
 }
 
 
-
 .body.dark-mode.texto-dinamico li::after {
   background-color: #380606;
 }
-
-
 
 
 .texto-dinamico li::after {
