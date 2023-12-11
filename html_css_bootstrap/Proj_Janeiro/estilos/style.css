@@ -31,6 +31,7 @@ header {
     top: 0;
     left: 0;
     transition: .5s;
+    z-index: 10;
 }
 
 nav a:hover{
@@ -95,9 +96,10 @@ header ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
  }
 
- .banner h1 {   
+.banner h1 {   
     font-size: 3.5em;
     font-weight: bold;
     color: white;
@@ -107,4 +109,21 @@ header ul li a {
     color:rgb(32, 198, 60);
 }
 
+.chevron img {
+   height: 100px;
+}
 
+.chevron {
+    position: absolute;
+    bottom: 20px;
+    animation: bounce 2s ease-out infinite;
+}
+
+@keyframes bounce{
+    0%, 100% {
+        transform:translateY(0px) ;
+    }
+    50%{
+        transform:translateY(-30px) ;
+    }
+}
