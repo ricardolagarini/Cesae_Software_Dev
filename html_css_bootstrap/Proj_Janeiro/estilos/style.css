@@ -20,6 +20,9 @@ html {
 
 .flex{
     display: flex;
+}
+
+.container .flex{
     align-items: center;
     justify-content: space-between;
 }
@@ -69,6 +72,7 @@ header ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+  
  }
 
 .btn-contato button {
@@ -100,7 +104,7 @@ header ul li a {
  }
 
 .banner h1 {   
-    font-size: 3.5em;
+    font-size: 60px;
     font-weight: bold;
     color: white;
  }
@@ -127,3 +131,52 @@ header ul li a {
         transform:translateY(-30px) ;
     }
 }
+
+/* Estilo das espcialidades */
+
+section.especialidades {
+    padding: 40px 4%;
+    background-color: black;
+    
+}
+
+section.especialidades .flex {
+    gap: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+h2 {   
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+ }
+
+h2 span {
+    color:rgb(32, 198, 60);
+    
+}
+.especialidades .especialidades-box {
+color: white;
+padding: 40px;
+margin-top: 45px;
+border-radius: 20px;
+transition: 0.2s;
+}
+
+.especialidades .especialidades-box:hover {
+transform: scale(1.05);
+box-shadow: 0 0 15px rgba(255, 255, 255, 0.415);
+}
+
+.especialidades-box i {
+   font-size: 70px;
+   color: rgb(32, 198, 60);
+}
+
+.especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+ }
