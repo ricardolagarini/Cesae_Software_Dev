@@ -1,5 +1,9 @@
 package View;
 
+import Controllers.AdminController;
+import Controllers.ClientController;
+
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class AdministradorView {
@@ -7,9 +11,9 @@ public class AdministradorView {
     public AdministradorView() {
     }
 
-    public static void menuAdmin() {
+    public static void menuAdmin() throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
-
+        AdminController adminController = new AdminController();
         int opcao = 0;
 
         do {
@@ -45,10 +49,12 @@ public class AdministradorView {
 
                 case 5:
                     System.out.println("\n*** Obter o total de todas as vendas ***\n");
+                    System.out.println("Total de vendas: " +adminController.valorVendaTotal()+" €");
                     break;
 
                 case 6:
                     System.out.println("\n*** Obter a média de todas as vendas ***\n");
+                    System.out.println("Media de vendas: " +adminController.mediaVendas()+" €");
                     break;
 
                 case 0:
