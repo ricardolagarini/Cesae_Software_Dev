@@ -1,182 +1,277 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-html {
-    height: 500vh;
+/* ~~ ESTILO DO NAV ~~ */
+
+.container {
+  max-width: 1280px;
+  margin: auto;
 }
 
-.container{
-    max-width: 1280px;
-    margin: auto;
+.flex {
+  display: flex;
 }
 
-.flex{
-    display: flex;
-}
-
-.container .flex{
-    align-items: center;
-    justify-content: space-between;
+.container .flex {
+  align-items: center;
+  justify-content: space-between;
 }
 
 header {
-    width: 100%;
-    padding: 60px 4%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: .5s;
-    z-index: 10;
+  width: 100%;
+  padding: 60px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  z-index: 10;
 }
 
-nav a:hover{
-    display: inline-block;  
-    color:rgb(32, 198, 60) ; 
-    transform: scale(1.2);  
+nav a:hover {
+  display: inline-block;
+  color: rgb(32, 198, 60);
+  transform: scale(1.2);
 }
 
-header.rolagem{
-    background-color: rgb(255, 255, 255);  
-    padding: 10px 4%;
+header.rolagem {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 4%;
 }
 
-header.rolagem a{
-    color: rgb(32, 198, 60);
+header.rolagem a {
+  color: rgb(32, 198, 60);
 }
 
 header i {
-    font-size: 40px;
-    color: rgb(32, 198, 60)
+  font-size: 40px;
+  color: rgb(32, 198, 60);
 }
 
-header i:hover { 
-    transform: scale(1.09); 
-    display: inline-block;  
+header i:hover {
+  transform: scale(1.09);
+  display: inline-block;
 }
 
 header ul li {
-    display: inline-block;
-    margin: 0px 40px ;
-    list-style-type: none; 
- }
+  display: inline-block;
+  margin: 0px 40px;
+  list-style-type: none;
+}
 
 header ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  
- }
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 .btn-contato button {
-    width: 100px;
-    height: 40px;
-    border: 0;
-    background-color: rgb(32, 198, 60);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .2s;
-    border-radius: 2px;
+  width: 100px;
+  height: 40px;
+  border: 0;
+  background-color: rgb(32, 198, 60);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 2px;
 }
 
-.btn-contato button:hover { 
-    transform: scale(1.09);   
+.btn-contato button:hover {
+  transform: scale(1.09);
 }
+
+/* ~~ ESTILO DO BANNER ~~ */
 
 .banner {
-    height: 100vh;
-    background-image: url(/Proj_Janeiro/imagens/2.jpg);
-    background-position:100% 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
- }
-
-.banner h1 {   
-    font-size: 60px;
-    font-weight: bold;
-    color: white;
- }
-
- .banner h1 span {
-    color:rgb(32, 198, 60);
+  height: 100vh;
+  background-image: url(/Proj_Janeiro/imagens/banner-reduct.jpg);
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
+.banner h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+}
+
+.banner h1 span {
+  color: rgb(32, 198, 60);
+}
+
+/* ~~ ESTILO E ANIMAÇAO DO CHEVRON (SETAS) ~~ */
+
 .chevron img {
-   height: 100px;
+  height: 100px;
 }
 
 .chevron {
-    position: absolute;
-    bottom: 20px;
-    animation: bounce 2s ease-out infinite;
+  position: absolute;
+  bottom: 20px;
+  animation: bounce 2s ease-out infinite;
 }
 
-@keyframes bounce{
-    0%, 100% {
-        transform:translateY(0px) ;
-    }
-    50%{
-        transform:translateY(-30px) ;
-    }
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
 }
 
-/* Estilo das espcialidades */
+/* ~~ ESTILO DAS ESPECIALIDADES ~~ */
 
 section.especialidades {
-    padding: 40px 4%;
-    background-color: black;
-    
+  padding: 80px 4%;
+  background-color: black;
+  
 }
 
 section.especialidades .flex {
-    gap: 60px;
-    align-items: center;
-    justify-content: space-between;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
-
-h2 {   
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
- }
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
 
 h2 span {
-    color:rgb(32, 198, 60);
-    
+  color: rgb(32, 198, 60);
 }
+
+.especialidades h2 {
+  text-align: center;
+}
+
 .especialidades .especialidades-box {
-color: white;
-padding: 40px;
-margin-top: 45px;
-border-radius: 20px;
-transition: 0.2s;
+  color: white;
+  padding: 40px;
+  margin-top: 45px;
+  border-radius: 20px;
+  transition: 0.2s;
+  
 }
 
 .especialidades .especialidades-box:hover {
-transform: scale(1.05);
-box-shadow: 0 0 15px rgba(255, 255, 255, 0.415);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.415);
 }
 
 .especialidades-box i {
-   font-size: 70px;
-   color: rgb(32, 198, 60);
+  font-size: 70px;
+  color: rgb(32, 198, 60);
 }
 
 .especialidades-box h3 {
-    font-size: 28px;
-    margin: 15px 0;
- }
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+/* ~~ ESTILO DO SOBRE ~~ */
+
+section.sobre {
+  padding: 50px 4% 70px 4% ;
+  background-color: black;
+  
+}
+
+section.sobre .flex {
+  align-items: center;
+  gap: 60px;
+}
+
+.img-sobre img {
+  height: 340px;
+  width: 260px;
+  border-radius: 10px;
+}
+
+.sobre .txt-sobre {
+  color: white;
+}
+
+.sobre .txt-sobre h2 {
+  font-size: 33px;
+  line-height: 35px;
+  margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+  display: block;
+}
+
+.sobre .txt-sobre p {
+  margin: 20px 0;
+  text-align: justify;
+}
+
+.btn-social button {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(32, 198, 60);
+  font-size: 19px;
+}
+
+.btn-social button:hover {
+    transform: scale(1.07);
+    transition: 0.2s;
+}
+
+.sobre .txt-sobre .btn-social a {
+  padding: 2px;
+}
+
+.btn-social i {
+  color: rgba(255, 255, 255, 0.919);
+}
+
+/* ~~ ESTILO DO FOOTER ~~ */
+
+footer {
+    padding: 40px 4% 10px 4% ;
+    background-color: black;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+.borda {
+    border-bottom: 2px solid rgb(32, 198, 60);
+}
+
+footer .line-footer p i{
+    color: rgb(32, 198, 60);
+    font-size: 22px;
+}
+
+footer .line-footer a{
+    color: white;
+    /* text-decoration: none; */
+    font-size: 15px;
+}
