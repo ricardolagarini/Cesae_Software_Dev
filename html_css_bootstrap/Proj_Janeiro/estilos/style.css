@@ -142,14 +142,12 @@ header ul li a {
 section.especialidades {
   padding: 80px 4%;
   background-color: black;
-  
 }
 
 section.especialidades .flex {
   gap: 60px;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 h2 {
@@ -172,7 +170,6 @@ h2 span {
   margin-top: 45px;
   border-radius: 20px;
   transition: 0.2s;
-  
 }
 
 .especialidades .especialidades-box:hover {
@@ -188,6 +185,11 @@ h2 span {
 .especialidades-box h3 {
   font-size: 28px;
   margin: 15px 0;
+  text-align: justify;
+}
+
+.especialidades-box p {
+  text-align: justify;
 }
 
 /* ~~ ESTILO DO SOBRE ~~ */
@@ -195,7 +197,6 @@ h2 span {
 section.sobre {
   padding: 50px 4% 70px 4% ;
   background-color: black;
-  
 }
 
 section.sobre .flex {
@@ -238,8 +239,8 @@ section.sobre .flex {
 }
 
 .btn-social button:hover {
-    transform: scale(1.07);
-    transition: 0.2s;
+  transform: scale(1.07);
+  transition: 0.2s;
 }
 
 .sobre .txt-sobre .btn-social a {
@@ -253,30 +254,35 @@ section.sobre .flex {
 /* ~~ ESTILO DO FOOTER ~~ */
 
 footer {
-    padding: 40px 4% 10px 4% ;
-    background-color: black;
-    box-shadow: 0 0 40px 10px #ffffff1d;
+  padding: 40px 4% 10px 4% ;
+  background-color: black;
+  box-shadow: 0 0 40px 10px #ffffff1d;
 }
 
 footer .flex {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 footer .line-footer {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .borda {
-    border-bottom: 2px solid rgb(32, 198, 60);
+  border-bottom: 2px solid rgb(32, 198, 60);
 }
 
 footer .line-footer p i{
-    color: rgb(32, 198, 60);
-    font-size: 22px;
+  color: rgb(32, 198, 60);
+  font-size: 22px;
 }
 
 footer .line-footer a{
-    color: white;
-    /* text-decoration: none; */
-    font-size: 15px;
+  color: white;
+  /* text-decoration: none; */
+  font-size: 15px;
+}
+
+footer .logo-footer i{
+  color: rgb(32, 198, 60);
+  font-size: 40px;
 }
