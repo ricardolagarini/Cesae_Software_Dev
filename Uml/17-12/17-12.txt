@@ -1,0 +1,3 @@
+Olhar para o site da wook e ver as classes e atributos 
+que estão diretamente relacionados com a venda. assuma que os 
+produtos já residem no site e não têm necessidade de ser introduzidos pelo vendedor.

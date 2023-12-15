@@ -1,0 +1,178 @@
+"Em um reino distante, o jovem guerreiro Calabreso, conhecido por sua bravura e habilidades de combate, é convocado pelo Rei Cedric 
+para uma missão vital. Uma horda de criaturas sombrias invadiu a região do norte, ameaçando a paz do reino. Assim, nosso herói 
+confiável e determinação inabalável, Calabreso parte em uma jornada perigosa para proteger o reino.
+
+// CRIAÇAO PERSONAGEM //
+1- Cavaleiro
+2- Arqueiro
+3- Feiticeiro
+
+#Todos atques terao danos random
+Critical [50dano 10%]
+Normal 90% [20dano 60% , 30dano 30%]
+
+#Vida começa com 100/100
+
+#Exibir status
+Vida
+Ataque
+Dinheiro
+Itens
+
+
+// ---------- | SALA [1] | ---------- \\
+
+\\ ~~~~ Reino do Norte ~~~~ //
+Calabreso esta pronto para sua jornada, para onde quer ir agora?
+
+1 - Floresta Densa
+2 - Caminho para a Caverna Isolada 
+3 - Ver loja de mercador
+    1 -   Ver lista de itens 
+    [Arma sagrada (aumenta +20 dano) custa 500 dinheiros]
+    1.1 - Comprar (nao tem dinheiro)
+    1.2 - Vender um rim por 500 dinheiros
+    (Perdeu permanentemente 30 de vida) 70/70
+    1.3 - Sair
+4 - Exibir status do jogador
+
+-----------------------------------------------------------------
+
+//---------- | SALA [2] | ----------\\
+
+\\ ~~~~ Floresta Densa ~~~~ //
+
+Calabreso fica encantado com a floresta e sua diversidade, mas o que mas lhe chamou
+atençao foi uma estranha arvore com um fruto que nunca viu antes
+1 - Comer fruto
+    (aumenta vida em 25 permanentemente , morre se nao usar poçao misteriosa)
+    O fruto contem veneno!
+    Status [Envenenado]
+    (Nao possui imunidade a veneno e morre)	
+2 - Seguir caminho
+
+Mais adiante Calabreso se depara com criaturas desconhecidas e resolve se aproximar
+
+Encontrou 1 Goblin Selvagem! [LUTA] ou 3 Goblins [30% chance]
+(dropou ruby) - [Vender mais adiante por 100C] 
+
+De repente o ar começa a ficar denso e umido e inesperadamente algo surge em sua frente!
+
+Encontrou Planta Anciã Mortifera! [LUTA] [BOSS]
+(Planta dropou elmo encantado) - [Aumenta em 5 vida]
+(Planta dropou petala arco-iris) - [Vender mais adiante 200C]
+
+1 - Seguir caminho Montanhas Ingrimes
+2 - Lago Nebuloso
+3 - Exibir status do jogador
+
+-----------------------------------------------------------------
+
+// ---------- | SALA [2.1] | ---------- \\
+\\ ~~~~ Lago Nebuloso ~~~~ //
+
+Uma névoa paira sobre suas águas escuras, criando uma sensação de que o lago está sempre envolto 
+em um segredo profundo, ocultando o que pode estar além de sua superfície refletiva.
+
+1 - Colocar a mao dentro do lago
+    (encontrou uma poçao de cura+, cura 40)
+2 - Seguir para Montanha Ingrime
+3 - Exibir status do jogador
+
+-----------------------------------------------------------------
+
+// ---------- | SALA [3] | ---------- \\
+\\ ~~~~ Caminho para a Caverna Isolada ~~~~ //
+
+Calabreso econtra um homem misterioso caido ao chao.
+
+1- Verificar mais de perto
+(Vampiro esta a dias sem se alimentar muito fraco e pede pelo seu sangue para sobreviver)
+(Dar o sangue ira diminuir 10 de vida permanentemente)
+1.1 - Dar sangue
+(Vampiro agradece e vai embora em direçao ao reino)
+(Mordida do vampiro lhe deu imunidade a veneno)
+2 - Seguir caminho
+(segue para caverna isolada)
+3 - Exibir status do jogador
+
+
+// ---------- | SALA [4] | ---------- \\
+\\ ~~~~ Caverna Isolada ~~~~ //
+
+Ao adentrar a caverna, a luz do lado de fora diminui rapidamente, mergulhando os intrépidos exploradores em uma escuridão profunda.
+Calabreso com extrema cautela ao desbravar a caverna se depara com monstros nunca visto antes.
+
+Encontrou 3 Morcegos Sugadores de Sangue! [LUTA] ou 5 morcegos [10% chance]
+(dropou dentes de diamante) - [Vender mais adiante 100C]
+
+Apos a luta, verificou que havia um velho guerreiro sem vida ao chao.
+1 - Verificar corpo?
+(Adquiriu elixir) - [Recupera toda a vida]
+2- Ignorar
+
+Ao explorar mais ao fundo da caverna, Calabreso sentiu um odor muito forte 
+de carne podre.
+
+Encontrou Ogro Comedor de Humanos! [LUTA] [BOSS]
+(Ogro dropu anel de força) - [Aumenta em 5 atque]
+(Ogro dropu barra de ouro) - [Vender mais adiante 200C]
+
+Calabreso avista caminho para Floresta Densa e Montanhas Ingrimes
+Para onde deseja ir?
+
+1 - Floresta Densa
+2 - Montanhas Ingrimes
+3 - Exibir status do jogador
+
+-----------------------------------------------------------------
+
+// ---------- | SALA [5] | ---------- \\
+\\ ~~~~  Montanhas Ingrimes ~~~~ //
+
+
+Calabreo chega enfim as montanhas e ja consegue avistar a Fortaleza Sombria, seu destino final.
+Ao caminhar pela longa estrada montanhosa, Calabreso encontra um mercador de itens
+1 - Ver Itens
+  - Poçao de cura [Cura 30, custa 50c]
+  - Vinho batizado [Cura 50 mas deixa bebado, custa 50c] [Status bebado tem 50% chance de acerto de atque]
+  - Armadura Espetacular [Aumenta vida 20, custa 500c]
+2 - Seguir para Fortaleza Sombria
+3 - Cabana na montanha
+4 - Exibir status do jogador
+
+-----------------------------------------------------------------
+
+// ---------- | SALA [5.1] | ---------- \\
+\\ ~~~~ Cabana nas montanhas ~~~~ //
+
+Calabreso chega a cabana e resolver passar a noite para descansar antes de 
+ir rumo ao seu ultimo destino.
+
+Uma pressao esmagadora toma conta ao seu redor durante a noite.
+Encontrou Dragao Lendario! [LUTA] [BOSS] [30% chance de aparecer]
+(Dragao dropou Arma sagrada) - [aumenta +20 dano]
+
+Apos desncasar
+1 - Seguir para Fortaleza Sombria
+2 - Exibir status do jogador
+
+
+-----------------------------------------------------------------
+
+// ---------- | SALA [6] | ---------- \\
+\\ ~~~~  Fortaleza Sombria ~~~~ //
+
+Calabreso chega à Fortaleza Sombria, um lugar macabro onde a escuridão parece dançar nas sombras.
+
+Encontrou Tenente da Escuridao! [LUTA] [Sub-BOSS]
+(Tenente dropou poçao de cura)
+
+No entanto, o verdadeiro desafio aguarda além das muralhas da fortaleza. O Chefe Final, um ser corrompido pelo poder das 
+trevas, aguarda Calabreso em um duelo épico. 
+
+
+Encontrou General Shadown! [LUTA] [Final-BOSS]
+
+Calabreso dissipa a escuridão que ameaçava o reino. A vitória é celebrada, nosso guerreio se torna uma lenda 
+e seu nome é lembrado por gerações como o herói que salvou o reino das trevas.
