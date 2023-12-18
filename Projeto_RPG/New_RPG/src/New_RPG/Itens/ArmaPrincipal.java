@@ -8,7 +8,8 @@ public class ArmaPrincipal extends ItemHeroi {
     private int ataqueEspecial;
 
 
-    public ArmaPrincipal(int ataque, int ataqueEspecial) {
+    public ArmaPrincipal(String nome, int preco, int ataque, int ataqueEspecial) {
+        super(nome, preco);
         this.ataque = ataque;
         this.ataqueEspecial = ataqueEspecial;
     }

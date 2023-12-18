@@ -8,8 +8,11 @@ public abstract class ItemHeroi {
     ArrayList<String> heroisPermitidos;
 
 
-
-    //^^^^^^desenvolver construtor de item^^^^^^
+    public ItemHeroi(String nome, int preco) {
+        this.nome = nome;
+        this.preco = preco;
+        this.heroisPermitidos = new ArrayList<>();
+    }
 
     public void mostrarDetalhes(){
         System.out.println( "Nome: " + this.nome);

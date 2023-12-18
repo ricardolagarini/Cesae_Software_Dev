@@ -5,6 +5,10 @@ public class Pocao extends Consumivel{
     private int forca; // força a aumentar
 
 
+    public Pocao(int vida, int forca) {
+        this.vida = vida;
+        this.forca = forca;
+    }
 
     @Override
     public void mostrarDetalhes() {
