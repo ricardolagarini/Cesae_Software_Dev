@@ -10,8 +10,5 @@ public class NPC extends Entidade{
 
 
 
-    @Override
-    public void atacar(Entidade heroi) {
 
-    }
 }

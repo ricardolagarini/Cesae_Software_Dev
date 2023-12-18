@@ -25,7 +25,7 @@ public abstract class Entidade {
         System.out.println( "Força: " + this.forca);
     }
 
-    public abstract void atacar(Entidade inimigo);
+
 
     public boolean estaVivo() {
         return hp > 0;

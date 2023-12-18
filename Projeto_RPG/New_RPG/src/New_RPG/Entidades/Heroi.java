@@ -5,13 +5,12 @@ import New_RPG.Itens.Consumivel;
 
 import java.util.ArrayList;
 
-public abstract class Heroi extends Entidade {
+public abstract class Heroi extends Entidade {     //  TIRAR ABSTRACT PARA TESTE
 
     private int nivel;
     private int ouro;
     ArmaPrincipal armaPrincipal;
     ArrayList<Consumivel> inventario;
-
 
     public Heroi(String nome, int maxHp, int hp, int forca, int nivel, int ouro, ArmaPrincipal armaPrincipal) {
         super(nome, maxHp, hp, forca);
@@ -21,16 +20,18 @@ public abstract class Heroi extends Entidade {
         ArrayList<Consumivel> inventario;
     }
 
-    @Override
-    public void atacar(Entidade inimigo) { // ENTIDADE OU HEROI?
-        if (inimigo instanceof NPC && inimigo.estaVivo()) {
-            NPC monstro = new NPC() ;   // ESTA PEDINDO CONSTRUTOR
-            int vidaAtual= monstro.getHp(); // NAO ACESSA
+    public void atacar(NPC inimigo) {
 
-            vidaAtual -= getForca();
-            System.out.println(getNome() + " atacou " + monstro.getNome() + " causando " + getForca() + " de dano.");
-            if (!monstro.estaVivo()) {
-                System.out.println(monstro.getNome() + " foi derrotado!");
+        if (inimigo != null && inimigo.estaVivo()) {
+            int vidaAtual= inimigo.getHp();
+
+            while (vidaAtual>0) {
+                System.out.println(getNome() + " atacou " + inimigo.getNome() + " causando " + getForca() + " de dano.");
+                vidaAtual -= getForca();
+            }
+
+            if (vidaAtual==0) {
+                System.out.println(inimigo.getNome() + " foi derrotado!");
             }
 
         }
