@@ -7,6 +7,8 @@
 
 
 PROCURAR CLASS INTERFACE
+MENU NAV BUGADO
+CORRIGIR MENU HAMBURGUER
 
 FAZER TRANSIÇAO DOS ITENS
 https://www.youtube.com/watch?v=dN7FAswF2HQ
@@ -17,4 +19,3 @@ https://www.youtube.com/watch?v=V-_esdbwgbA&list=PLaLQ4gJXUd6DP5n1t8r4rwF40ahLgU
 
 
 
-542 x 784
