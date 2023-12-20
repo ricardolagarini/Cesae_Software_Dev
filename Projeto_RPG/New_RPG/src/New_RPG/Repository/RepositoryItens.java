@@ -1,0 +1,21 @@
+package New_RPG.Repository;
+
+import New_RPG.Itens.ItemHeroi;
+import New_RPG.Tools.CsvReaderItens;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
+public class RepositoryItens {
+    private ArrayList<ItemHeroi> itensList;
+
+    public RepositoryItens() throws FileNotFoundException {
+        CsvReaderItens csvListReader = new CsvReaderItens();
+        this.itensList = csvListReader.readCSVToRepository();
+    }
+
+    public ArrayList<ItemHeroi> getItensList() {
+        return itensList;
+    }
+
+
+}

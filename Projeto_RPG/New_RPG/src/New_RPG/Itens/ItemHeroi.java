@@ -22,8 +22,11 @@ public abstract class ItemHeroi {
 
 
 
+    // criar um metodo para add heroi permitdo no ArrayList<String> heroisPermitidos;
 
-
+    public void addHeroiPermItem (String classePermitda) {
+        heroisPermitidos.add(classePermitda);
+    }
 
 
 
