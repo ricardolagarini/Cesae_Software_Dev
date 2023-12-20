@@ -35,7 +35,7 @@ public class Vendedor {
         System.out.println("");
 
         for (Integer indice : itemAleatorio) {
-            System.out.print((itemAleatorio.indexOf(indice) + 1) + ". : ");
+            //System.out.print((itemAleatorio.indexOf(indice) + 1) + ". : ");
             this.loja.get(indice).mostrarDetalhes();
         }
     }

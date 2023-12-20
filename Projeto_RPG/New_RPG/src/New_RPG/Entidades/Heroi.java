@@ -19,7 +19,6 @@ public abstract class Heroi extends Entidade {     //  TIRAR ABSTRACT PARA TESTE
         this.ouro = ouro;
         this.armaPrincipal = armaPrincipal;
         ArrayList<Consumivel> inventario;
-
     }
 
     public void atacar(NPC inimigo) {
@@ -42,6 +41,10 @@ public abstract class Heroi extends Entidade {     //  TIRAR ABSTRACT PARA TESTE
     public void udarPocao(){
 
     }
+
+
+
+
 
 
 }
