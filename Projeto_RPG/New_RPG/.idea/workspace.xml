@@ -13,6 +13,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -25,6 +26,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -36,6 +38,19 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/softdev/Desktop/Cesae_Software_Dev/Projeto_RPG/New_RPG&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> d688a37b59880cfcfd3c2ab954e03a6dee577405
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -75,6 +90,32 @@
       <workItem from="1702918358404" duration="25000" />
       <workItem from="1702918417442" duration="42000" />
       <workItem from="1702918485487" duration="241000" />
+      <workItem from="1703062487670" duration="8000" />
+      <workItem from="1703062528865" duration="18000" />
+      <workItem from="1703062706432" duration="418000" />
+      <workItem from="1703063814402" duration="827000" />
+      <workItem from="1703064695285" duration="38000" />
+      <workItem from="1703064777002" duration="39000" />
+      <workItem from="1703064843782" duration="637000" />
+      <workItem from="1703065508637" duration="108000" />
+      <workItem from="1703065631826" duration="225000" />
+      <workItem from="1703065869448" duration="169000" />
+      <workItem from="1703066102437" duration="106000" />
+      <workItem from="1703066229099" duration="106000" />
+      <workItem from="1703066373652" duration="25000" />
+      <workItem from="1703066447153" duration="57000" />
+      <workItem from="1703066634977" duration="7000" />
+      <workItem from="1703066657849" duration="36000" />
+      <workItem from="1703066702655" duration="15000" />
+      <workItem from="1703066733645" duration="152000" />
+      <workItem from="1703066957326" duration="738000" />
+      <workItem from="1703067866537" duration="2270000" />
+      <workItem from="1703070249528" duration="821000" />
+      <workItem from="1703071167195" duration="287000" />
+      <workItem from="1703071534025" duration="2310000" />
+      <workItem from="1703073884398" duration="3226000" />
+      <workItem from="1703084849769" duration="444000" />
+      <workItem from="1703085437344" duration="4807000" />
     </task>
     <servers />
   </component>

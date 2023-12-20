@@ -26,7 +26,6 @@ public abstract class Entidade {
     }
 
 
-
     public boolean estaVivo() {
         return hp > 0;
     }
