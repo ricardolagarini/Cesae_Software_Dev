@@ -15,15 +15,17 @@ public abstract class ItemHeroi {
     }
 
     public void mostrarDetalhes(){
-        System.out.println( "Nome: " + this.nome);
-        System.out.println( "Preço" + this.preco+" $");
-        System.out.println( "Heroi permitido: " + this.heroisPermitidos);
+        System.out.print(this.nome+" - "+"Preço: " + this.preco+"$");
+    }
+
+    public ArrayList<String> getHeroisPermitidos() {
+        return heroisPermitidos;
     }
 
 
-
-
-
+    public void addHeroiPermItem (String classePermitda) {
+        heroisPermitidos.add(classePermitda);
+    }
 
 
 

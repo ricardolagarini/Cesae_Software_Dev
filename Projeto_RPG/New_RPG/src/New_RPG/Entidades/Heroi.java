@@ -9,8 +9,9 @@ public abstract class Heroi extends Entidade {     //  TIRAR ABSTRACT PARA TESTE
 
     private int nivel;
     private int ouro;
-    ArmaPrincipal armaPrincipal;
-    ArrayList<Consumivel> inventario;
+    private ArmaPrincipal armaPrincipal;
+    private ArrayList<Consumivel> inventario;
+
 
     public Heroi(String nome, int maxHp, int hp, int forca, int nivel, int ouro, ArmaPrincipal armaPrincipal) {
         super(nome, maxHp, hp, forca);
@@ -18,6 +19,7 @@ public abstract class Heroi extends Entidade {     //  TIRAR ABSTRACT PARA TESTE
         this.ouro = ouro;
         this.armaPrincipal = armaPrincipal;
         ArrayList<Consumivel> inventario;
+
     }
 
     public void atacar(NPC inimigo) {
@@ -37,10 +39,9 @@ public abstract class Heroi extends Entidade {     //  TIRAR ABSTRACT PARA TESTE
         }
     }
 
+    public void udarPocao(){
 
-
-
-
+    }
 
 
 }

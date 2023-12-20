@@ -4,18 +4,17 @@ public class Pocao extends Consumivel{
     private int vida;  // vida a curar
     private int forca; // força a aumentar
 
-
-    public Pocao(int vida, int forca) {
+    public Pocao(String nome, int preco, int vida, int forca) {
+        super(nome, preco);
         this.vida = vida;
         this.forca = forca;
     }
 
     @Override
     public void mostrarDetalhes() {
-        System.out.println( "Poder de cura: "+ this.vida);;
-        System.out.println( "Força + "+ this.forca);;
+        super.mostrarDetalhes();
+        System.out.println(" ( "+"Poder de cura: "+ this.vida+ " |"+" Força: +"+ this.forca+" |"+" Classe: "+getHeroisPermitidos()+" )");;
     }
-
 
     public int getVidaCurar() {
         return vida;

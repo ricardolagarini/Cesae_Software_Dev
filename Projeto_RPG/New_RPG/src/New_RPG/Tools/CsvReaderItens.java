@@ -10,50 +10,61 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CsvReader {
+public class CsvReaderItens {
 
     private String filePath;
-    public CsvReader(String filePath) {
-        this.filePath = filePath;
-    }
 
+    public CsvReaderItens() {
+        this.filePath = "Ficheiros/itens.csv";
+    }
 
     public ArrayList<ItemHeroi> readCSVToRepository() throws FileNotFoundException {
 
-        File file = new File(filePath);
+        File file = new File(this.filePath);
         Scanner scanner = new Scanner(file);
         String linha = scanner.nextLine();
 
         ArrayList<ItemHeroi> itensList = new ArrayList<>();
 
         while (scanner.hasNextLine()) {
+
             linha = scanner.nextLine();
             String[] linhaDividida = linha.split(";");
 
             String tipo = linhaDividida[0];
             String nome = linhaDividida[1];
             int preco = Integer.parseInt(linhaDividida[2]);
+
             String heroisPermitidos = linhaDividida[3];
+            heroisPermitidos=heroisPermitidos.replace("[", "");
+            heroisPermitidos=heroisPermitidos.replace("]", "");
+            String [] itemClass = heroisPermitidos.split(",");
+
             int ataque = Integer.parseInt(linhaDividida[4]);
             int ataqueEspecial = Integer.parseInt(linhaDividida[5]);
             int ataqueInstantaneo = Integer.parseInt(linhaDividida[6]);
             int vida = Integer.parseInt(linhaDividida[7]);
             int forca = Integer.parseInt(linhaDividida[8]);
 
-            linha = linha.replace("[", "").replace("]", ""); // fazer na string heroi permitido
+            ItemHeroi novoItemHeroi = null;
 
-            if(linha.equals("ArmaPrincipal")) {
-                ArmaPrincipal novaArmaprincipal = new ArmaPrincipal(nome, preco, ataque, ataqueEspecial); // fazer ciclo for para percorrer do array
+            if(tipo.equals("ArmaPrincipal")) {
+                novoItemHeroi = new ArmaPrincipal(nome, preco, ataque, ataqueEspecial);
             }
 
-            if(linha.equals("ConsumivelCombate")) {
-                ConsumivelCombate novoConsumivelCombate = new ConsumivelCombate(ataqueInstantaneo); // fazer ciclo for para percorrer do array
+            if(tipo.equals("ConsumivelCombate")) {
+                novoItemHeroi = new ConsumivelCombate(nome, preco, ataqueInstantaneo);
             }
 
-            if(linha.equals("Pocao")) {
-                Pocao novaPocao = new Pocao(vida, forca); // fazer ciclo for para percorrer do array
+            if(tipo.equals("Pocao")) {
+                novoItemHeroi = new Pocao(nome, preco, vida, forca);
             }
 
+            for (int i = 0; i < itemClass.length; i++) {
+                novoItemHeroi.addHeroiPermItem(itemClass[i]);
+            }
+
+            itensList.add(novoItemHeroi);
 
         }
 

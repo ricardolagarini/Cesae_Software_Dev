@@ -5,7 +5,8 @@ public class ConsumivelCombate extends Consumivel {
     private int ataqueInstantaneo;
 
 
-    public ConsumivelCombate(int ataqueInstantaneo) {
+    public ConsumivelCombate(String nome, int preco, int ataqueInstantaneo) {
+        super(nome, preco);
         this.ataqueInstantaneo = ataqueInstantaneo;
     }
 
@@ -15,7 +16,8 @@ public class ConsumivelCombate extends Consumivel {
 
     @Override
     public void mostrarDetalhes() {
-        System.out.println( "Dano: "+ this.ataqueInstantaneo);;
+        super.mostrarDetalhes();
+        System.out.println(" ( "+"Dano: "+ this.ataqueInstantaneo +" | Classe: "+getHeroisPermitidos()+" )");
     }
 
 }
