@@ -1,24 +1,25 @@
-package New_RPG.Entidades;
+package New_RPG.Controller;
 
-import New_RPG.Itens.ItemHeroi;
+import New_RPG.Domain.Itens.ItemHeroi;
 import New_RPG.Repository.RepositoryItens;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Vendedor {
-    private ArrayList<ItemHeroi> loja;
+public class VendedorController {
+    private ArrayList<ItemHeroi> arrayItens;
 
-    public Vendedor() throws FileNotFoundException {
+    public VendedorController() throws FileNotFoundException {
         RepositoryItens repositoryItens = new RepositoryItens();
-        this.loja = repositoryItens.getItensList();
+        this.arrayItens= repositoryItens.getItensList();
     }
 
     public void imprimirLoja(){
         Random random = new Random();
         ArrayList<Integer> itemAleatorio = new ArrayList<>();
         while (itemAleatorio.size() < 10) {
-            int tempRandom = random.nextInt(0, this.loja.size());
+            int tempRandom = random.nextInt(0, this.arrayItens.size());
             if (!itemAleatorio.contains(tempRandom)) {
                 itemAleatorio.add(tempRandom);
             }
@@ -36,7 +37,20 @@ public class Vendedor {
 
         for (Integer indice : itemAleatorio) {
             //System.out.print((itemAleatorio.indexOf(indice) + 1) + ". : ");
-            this.loja.get(indice).mostrarDetalhes();
+            this.arrayItens.get(indice).mostrarDetalhes();
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

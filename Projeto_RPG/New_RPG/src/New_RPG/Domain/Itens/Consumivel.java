@@ -1,4 +1,4 @@
-package New_RPG.Itens;
+package New_RPG.Domain.Itens;
 
 public abstract class Consumivel extends ItemHeroi{
 

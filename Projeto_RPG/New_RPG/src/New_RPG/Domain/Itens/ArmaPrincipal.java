@@ -1,12 +1,9 @@
-package New_RPG.Itens;
-
-import New_RPG.Itens.ItemHeroi;
+package New_RPG.Domain.Itens;
 
 public class ArmaPrincipal extends ItemHeroi {
 
     private int ataque;
     private int ataqueEspecial;
-
 
     public ArmaPrincipal(String nome, int preco, int ataque, int ataqueEspecial) {
         super(nome, preco);

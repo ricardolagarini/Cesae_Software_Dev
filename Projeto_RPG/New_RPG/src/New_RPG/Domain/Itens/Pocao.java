@@ -1,4 +1,4 @@
-package New_RPG.Itens;
+package New_RPG.Domain.Itens;
 
 public class Pocao extends Consumivel{
     private int vida;  // vida a curar

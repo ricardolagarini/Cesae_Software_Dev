@@ -1,4 +1,4 @@
-package New_RPG.Entidades;
+package New_RPG.Domain.Entidades;
 
 public abstract class Entidade {
 
@@ -15,6 +15,8 @@ public abstract class Entidade {
     }
 
     public int getHp() { return hp;}
+    public int getMaxHp() {return maxHp;}
+
     public String getNome() { return nome;}
     public int getForca() { return forca;}
 

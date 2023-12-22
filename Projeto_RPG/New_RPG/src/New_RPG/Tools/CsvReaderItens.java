@@ -1,9 +1,9 @@
 package New_RPG.Tools;
 
-import New_RPG.Itens.ArmaPrincipal;
-import New_RPG.Itens.ConsumivelCombate;
-import New_RPG.Itens.ItemHeroi;
-import New_RPG.Itens.Pocao;
+import New_RPG.Domain.Itens.ArmaPrincipal;
+import New_RPG.Domain.Itens.ConsumivelCombate;
+import New_RPG.Domain.Itens.ItemHeroi;
+import New_RPG.Domain.Itens.Pocao;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,21 +12,12 @@ import java.util.Scanner;
 
 public class CsvReaderItens {
 
-<<<<<<< HEAD
-    private String filePath = "Ficheiros/ItensHeroiRPG.csv";
-
-    public CsvReaderItens() {
-        this.filePath = filePath;
-    }
-
-=======
     private String filePath;
 
     public CsvReaderItens() {
         this.filePath = "Ficheiros/itens.csv";
     }
 
->>>>>>> d688a37b59880cfcfd3c2ab954e03a6dee577405
     public ArrayList<ItemHeroi> readCSVToRepository() throws FileNotFoundException {
 
         File file = new File(this.filePath);
@@ -45,13 +36,8 @@ public class CsvReaderItens {
             int preco = Integer.parseInt(linhaDividida[2]);
 
             String heroisPermitidos = linhaDividida[3];
-<<<<<<< HEAD
-            heroisPermitidos.replace("[", " ");
-            heroisPermitidos.replace("]", " ");
-=======
             heroisPermitidos=heroisPermitidos.replace("[", "");
             heroisPermitidos=heroisPermitidos.replace("]", "");
->>>>>>> d688a37b59880cfcfd3c2ab954e03a6dee577405
             String [] itemClass = heroisPermitidos.split(",");
 
             int ataque = Integer.parseInt(linhaDividida[4]);
@@ -67,19 +53,11 @@ public class CsvReaderItens {
             }
 
             if(tipo.equals("ConsumivelCombate")) {
-<<<<<<< HEAD
-                novoItemHeroi = new ConsumivelCombate(ataqueInstantaneo);
-            }
-
-            if(tipo.equals("Pocao")) {
-                novoItemHeroi = new Pocao(vida, forca);
-=======
                 novoItemHeroi = new ConsumivelCombate(nome, preco, ataqueInstantaneo);
             }
 
             if(tipo.equals("Pocao")) {
                 novoItemHeroi = new Pocao(nome, preco, vida, forca);
->>>>>>> d688a37b59880cfcfd3c2ab954e03a6dee577405
             }
 
             for (int i = 0; i < itemClass.length; i++) {

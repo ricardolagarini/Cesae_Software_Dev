@@ -48,7 +48,7 @@ header.rolagem {
   padding: 10px 4%;
 }
 
-header.rolagem a {
+header.rolagem .menu-roll a {
   color: rgb(32, 198, 60);
 }
 
@@ -68,7 +68,7 @@ header .flex ul li {
   list-style-type: none;
 }
 
-header .flex ul li a {
+ header .flex ul li a {    
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -89,6 +89,7 @@ header .flex ul li a {
 .btn-contato button:hover {
   transform: scale(1.09);
 }
+
 
 /* ~~ ESTILO DO BANNER ~~ */
 
@@ -427,8 +428,6 @@ form .btn-enviar input:hover {
     display: none;
   }
 
-
-
   .chevron img {
     height: 70px;
   }
@@ -525,24 +524,28 @@ form .btn-enviar input:hover {
     font-size: 50px;
   }
 
-
   /* ~~ ESTILO MENU MOBILE ~~ */
 
   .menu-mobile{
     background-color: black;
-    height: 100vh;
+    height: 100vh;          /* nao esta pegando a tela toda */
     position: fixed;
     top: 0;
     right: 0;
     z-index: 9999;
-    width: 0%;                    /* width O% e hidden */
+    width: 0%;                    
     overflow: hidden;
+    transition: 0.2s;
   }
 
   .menu-mobile nav  ul {
     text-align: right;
     list-style-type: none;
     padding: 0px;
+  }
+
+  .menu-mobile.abrir-menu {
+    width: 70%; 
   }
 
   .menu-mobile nav  ul li a {
@@ -559,7 +562,6 @@ form .btn-enviar input:hover {
     background-color: rgb(32, 198, 60)
   }
 
-
   .menu-mobile .btn-fechar{
     padding: 20px 5%;                 
   }
@@ -568,6 +570,7 @@ form .btn-enviar input:hover {
     font-size: 20px;
     padding: 20px 5%;                
     color: rgb(32, 198, 60); 
+    cursor: pointer;
   }
 
   .abrir-menu-mob {
@@ -575,8 +578,9 @@ form .btn-enviar input:hover {
   }
 
   .abrir-menu-mob i { 
-    color: rgb(32, 198, 60);        /* ALTURA DESCONFIGURADA */
+    color: rgb(32, 198, 60);        /* ALTURA DESCONFIGURADA, MOVER PARA ESQUERDA */
     font-size: 40px;
+    cursor: pointer;
   }
 
  
