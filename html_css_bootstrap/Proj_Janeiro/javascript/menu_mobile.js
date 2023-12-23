@@ -1,14 +1,11 @@
-let btnMenu = document.getElementById('btn-menu')
+
 let menu = document.getElementById('menu-mobile')
-let fechar = document.getElementById('fechar-menu-mobile')
 
-btnMenu.addEventListener('click',()=>{
-menu.classList.add('abrir-menu')
-
-})
+function openMenu(){
+    menu.style.width = '70%'
+}
 
 
-fechar.addEventListener('click',()=>{
-    menu.classList.remove('abrir-menu')
-    
-})
+function closeMenu(){
+    menu.style.width = '0%'
+}
