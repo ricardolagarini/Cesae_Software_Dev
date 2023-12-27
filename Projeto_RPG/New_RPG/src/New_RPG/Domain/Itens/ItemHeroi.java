@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public abstract class ItemHeroi {
     private String nome;
     private int preco;
-    ArrayList<String> heroisPermitidos;
+    private ArrayList<String> heroisPermitidos;
 
 
     public ItemHeroi(String nome, int preco) {
@@ -22,6 +22,13 @@ public abstract class ItemHeroi {
         return heroisPermitidos;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public int getPreco() {
+        return preco;
+    }
 
     public void addHeroiPermItem (String classePermitda) {
         heroisPermitidos.add(classePermitda);

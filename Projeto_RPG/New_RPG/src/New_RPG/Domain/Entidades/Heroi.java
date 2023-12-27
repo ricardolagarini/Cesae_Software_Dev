@@ -1,5 +1,6 @@
 package New_RPG.Domain.Entidades;
 
+import New_RPG.Controller.EstrategiaAtaque.EstrategiaAtaque;
 import New_RPG.Domain.Itens.ArmaPrincipal;
 import New_RPG.Domain.Itens.Consumivel;
 import New_RPG.Domain.Itens.ItemHeroi;
@@ -12,25 +13,37 @@ public class Heroi extends Entidade { // colocar de volta o "abstract" para test
     private int ouro;
     private ArmaPrincipal armaPrincipal;
     private ArrayList<Consumivel> inventario;
+    private EstrategiaAtaque estrategiaAtaque;
 
-    public Heroi(String nome, int maxHp, int hp, int forca, int nivel, int ouro, ArmaPrincipal armaPrincipal) {
+    public Heroi(String nome, int maxHp, int hp, int forca, int nivel, int ouro, ArmaPrincipal armaPrincipal, EstrategiaAtaque estrategiaAtaque) {
         super(nome, maxHp, hp, forca);
         this.nivel = nivel;
         this.ouro = ouro;
         this.armaPrincipal = armaPrincipal;
         this.inventario = new ArrayList<>();
+        this.estrategiaAtaque = estrategiaAtaque;
     }
 
+
+    //~~GETTERS E SETTERS~~//
     public int getNivel() {return nivel; }
     public int getOuro() {return ouro;}
     public ArmaPrincipal getArmaPrincipal() {return armaPrincipal;}
     public ArrayList<Consumivel> getInventario() {return inventario;}
 
-    // Metodo para add itens no inventario
-    public void addItensInventario(Consumivel novoItem){inventario.add(novoItem);}
+    public void setOuro(int ouro) {
+        this.ouro = ouro;
+    }
 
-    // Metodo para comprar itens
-    public void pagarOuro(int preco) {this.ouro -= preco;}
+    public void setArmaPrincipal(ArmaPrincipal armaPrincipal) {
+        this.armaPrincipal = armaPrincipal;
+    }
+
+
+
+    //~~METODOS~~//
+    public void addItensInventario(Consumivel novoItem){inventario.add(novoItem);} // Metodo para add itens no inventario
+    public void pagarOuro(int preco) {this.ouro -= preco;}  // Metodo para comprar itens
 
     public void atacar(NPC inimigo) {
 
@@ -45,7 +58,6 @@ public class Heroi extends Entidade { // colocar de volta o "abstract" para test
             if (vidaAtual==0) {
                 System.out.println(inimigo.getNome() + " foi derrotado!");
             }
-
         }
     }
 
@@ -58,6 +70,9 @@ public class Heroi extends Entidade { // colocar de volta o "abstract" para test
         System.out.println("Ouro: "+this.getOuro());
         System.out.println("Arma equipada: "+this.getArmaPrincipal());
     }
+
+
+
 
 
 }
