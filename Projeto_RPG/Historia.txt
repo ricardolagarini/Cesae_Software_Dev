@@ -1,6 +1,4 @@
-"Em um reino distante, o jovem guerreiro Calabreso, conhecido por sua bravura e habilidades de combate, é convocado pelo Rei Tobias
-para uma missão vital. Uma horda de criaturas sombrias invadiu a região do norte, ameaçando a paz do reino. Assim, nosso herói 
-confiável e determinação inabalável, Calabreso parte em uma jornada perigosa para proteger o reino.
+"Em um reino distante, o jovem guerreiro Calabreso, conhecido por sua bravura e habilidades de combate, é convocado pelo Rei Tobias para uma missão vital. Uma horda de criaturas sombrias invadiu a região do norte, ameaçando a paz do reino. Assim, nosso herói confiável e determinação inabalável, Calabreso parte em uma jornada perigosa para proteger o reino."
 
 // CRIAÇAO PERSONAGEM //
 1- Cavaleiro
@@ -176,3 +174,16 @@ Encontrou General Shadown! [LUTA] [Final-BOSS]
 
 Calabreso dissipa a escuridão que ameaçava o reino. A vitória é celebrada, nosso guerreio se torna uma lenda 
 e seu nome é lembrado por gerações como o herói que salvou o reino das trevas.
+
+
+
+
+
+
+
+
+
+
+
+
+

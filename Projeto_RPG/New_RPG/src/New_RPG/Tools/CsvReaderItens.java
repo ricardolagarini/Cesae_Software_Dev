@@ -26,7 +26,7 @@ public class CsvReaderItens {
 
         ArrayList<ItemHeroi> itensList = new ArrayList<>();
 
-        while (scanner.hasNextLine()) {
+        while (scanner.hasNextLine()) { // Lê cada linha do arquivo CSV enquanto houver linhas disponíveis
 
             linha = scanner.nextLine();
             String[] linhaDividida = linha.split(";");
@@ -35,7 +35,7 @@ public class CsvReaderItens {
             String nome = linhaDividida[1];
             int preco = Integer.parseInt(linhaDividida[2]);
 
-            String heroisPermitidos = linhaDividida[3];
+            String heroisPermitidos = linhaDividida[3]; // Separa os tipos de heróis permitidos para este item
             heroisPermitidos=heroisPermitidos.replace("[", "");
             heroisPermitidos=heroisPermitidos.replace("]", "");
             String [] itemClass = heroisPermitidos.split(",");
@@ -48,6 +48,8 @@ public class CsvReaderItens {
 
             ItemHeroi novoItemHeroi = null;
 
+
+            // Cria um novo objeto com base no tipo de item lido no CSV
             if(tipo.equals("ArmaPrincipal")) {
                 novoItemHeroi = new ArmaPrincipal(nome, preco, ataque, ataqueEspecial);
             }
@@ -60,14 +62,12 @@ public class CsvReaderItens {
                 novoItemHeroi = new Pocao(nome, preco, vida, forca);
             }
 
-            for (int i = 0; i < itemClass.length; i++) {
+            for (int i = 0; i < itemClass.length; i++) { // Adiciona os tipos de heróis permitidos para o item criado
                 novoItemHeroi.addHeroiPermItem(itemClass[i]);
             }
 
             itensList.add(novoItemHeroi);
-
         }
-
         return itensList;
     }
 

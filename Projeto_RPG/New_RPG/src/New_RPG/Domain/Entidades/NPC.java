@@ -8,6 +8,9 @@ public class NPC extends Entidade{
         this.ouro = ouro;
     }
 
+    public int getOuro() {
+        return ouro;
+    }
 
 
 

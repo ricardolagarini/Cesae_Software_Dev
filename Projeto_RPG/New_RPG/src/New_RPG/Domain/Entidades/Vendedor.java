@@ -10,8 +10,11 @@ public class Vendedor {
     private ArrayList<ItemHeroi> loja;
 
     public Vendedor() throws FileNotFoundException {
-        this.loja = new ArrayList<>();
+        RepositoryItens repositoryItens = new RepositoryItens();
+        this.loja = repositoryItens.getItensList();
     }
 
-
+    public ArrayList<ItemHeroi> getLoja() {
+        return loja;
+    }
 }

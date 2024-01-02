@@ -1,12 +1,12 @@
 package New_RPG.Domain.Itens;
 
+import New_RPG.Domain.Entidades.Heroi;
 import java.util.ArrayList;
 
 public abstract class ItemHeroi {
     private String nome;
     private int preco;
     private ArrayList<String> heroisPermitidos;
-
 
     public ItemHeroi(String nome, int preco) {
         this.nome = nome;
@@ -34,17 +34,8 @@ public abstract class ItemHeroi {
         heroisPermitidos.add(classePermitda);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    public void armaDetStatus() {
+        System.out.println(this.nome);
+    }
 
 }

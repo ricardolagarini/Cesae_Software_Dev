@@ -1,15 +1,12 @@
 package New_RPG.Domain.Itens;
 
 public class ConsumivelCombate extends Consumivel {
-
     private int ataqueInstantaneo;
-
 
     public ConsumivelCombate(String nome, int preco, int ataqueInstantaneo) {
         super(nome, preco);
         this.ataqueInstantaneo = ataqueInstantaneo;
     }
-
     public int getAtaqueInstantaneo() {
         return ataqueInstantaneo;
     }

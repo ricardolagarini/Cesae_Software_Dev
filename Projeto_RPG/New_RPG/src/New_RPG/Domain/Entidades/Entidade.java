@@ -20,6 +20,11 @@ public abstract class Entidade {
     public String getNome() { return nome;}
     public int getForca() { return forca;}
 
+    public void setNome(String nome) {this.nome = nome;}
+    public void setMaxHp(int maxHp) {this.maxHp = maxHp;}
+    public void setHp(int hp) {this.hp = hp;}
+    public void setForca(int forca) {this.forca = forca;}
+
 
     public void mostrarDetalhes(){
         System.out.println( "Nome: " + this.nome);

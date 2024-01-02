@@ -9,7 +9,7 @@ public class RepositoryItens {
     private ArrayList<ItemHeroi> itensList;
     public RepositoryItens() throws FileNotFoundException {
         CsvReaderItens csvListReader = new CsvReaderItens();
-        this.itensList = csvListReader.readCSVToRepository();
+        this.itensList = csvListReader.readCSVToRepository(); // Lê o arquivo CSV e armazena em itensList
     }
 
     public ArrayList<ItemHeroi> getItensList() {

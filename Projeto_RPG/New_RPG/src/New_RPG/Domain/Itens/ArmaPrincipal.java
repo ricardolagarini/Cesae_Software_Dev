@@ -19,4 +19,6 @@ public class ArmaPrincipal extends ItemHeroi {
         super.mostrarDetalhes();
         System.out.println(" ( "+"Ataque: " + this.ataque+ " | "+ "Classe: "+getHeroisPermitidos()+") ");
     }
+
+
 }
