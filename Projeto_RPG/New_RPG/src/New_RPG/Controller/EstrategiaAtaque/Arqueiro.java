@@ -9,6 +9,7 @@ import New_RPG.Jogo.Jogo;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 import static New_RPG.Domain.Entidades.Heroi.exibirConsumiveisCombate;
 import static New_RPG.Domain.Entidades.Heroi.exibirConsumiveisPocao;
@@ -39,11 +40,20 @@ public class Arqueiro implements EstrategiaAtaque {
             int tipoDeAtaque = input.nextInt();
             int danoHeroi=0;
             int danoNPC = (int) (0.1 * npc.getForca()) + npc.getForca(); // Ataca primeiro mas leva 10% a mais de dano
-
+            boolean critical = true;
 
             switch (tipoDeAtaque) {
                 case 1:
-                    danoHeroi = heroi.getForca() + heroi.getArmaPrincipal().getAtaque();
+                    Random random = new Random();
+                    int chance = random.nextInt(10) + 1; // Número aleatório entre 1 e 10
+
+                    if (chance <= 4) { // Chance de 40% de ataque critical
+                        danoHeroi = (int) ((heroi.getForca() + heroi.getArmaPrincipal().getAtaque())*1.3);
+
+                    } else {
+                        danoHeroi = heroi.getForca() + heroi.getArmaPrincipal().getAtaque();
+                        critical = false;
+                    }
                     break;
                 case 2:
                     if (!especialUsado) {
@@ -135,8 +145,11 @@ public class Arqueiro implements EstrategiaAtaque {
                 if (danoHeroi < npc.getHp()) {
                     npc.setHp(npc.getHp() - danoHeroi);
                     System.out.println("");
-                    System.out.println(heroi.getNome() + " atacou causando " + danoHeroi + " de dano.");
-
+                    if (critical) {
+                        System.out.println(heroi.getNome() + " deu uma tremenda marretada causando ataque [critical] de " + danoHeroi + " de dano.\n");
+                    } else {
+                        System.out.println(heroi.getNome() + " atacou causando " + danoHeroi + " de dano.\n");
+                    }
                     if (danoNPC < heroi.getHp()) {
                         heroi.setHp(heroi.getHp() - danoNPC);
                         System.out.println(npc.getNome() + " atacou causando " + danoNPC + " de dano.\n");

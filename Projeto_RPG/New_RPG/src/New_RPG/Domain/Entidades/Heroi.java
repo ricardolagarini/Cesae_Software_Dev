@@ -55,7 +55,11 @@ public class Heroi extends Entidade {
     // Metodo retorna exibir a lista de consumiveis de combate no inventario
     public static ArrayList<Integer> exibirConsumiveisCombate(Heroi heroi){
         ArrayList<Integer> consumiveis = new ArrayList<>();
-        System.out.println("\n                      Consumiveis de Combate\n");
+
+        System.out.println("\n                                        »»———————————————⤷ ☢ ⤶—————————————««");
+        System.out.println("                                              Menu Consumiveis de Combate");
+        System.out.println("                                        »»———————————————————————————————————««\n");
+
         int contador = 1;
 
         for (Consumivel consumivelAtual : heroi.getInventario()){
@@ -72,7 +76,11 @@ public class Heroi extends Entidade {
     // Metodo retorna exibir a lista de consumiveis de cura no inventario
     public static ArrayList<Integer> exibirConsumiveisPocao(Heroi heroi){
         ArrayList<Integer> consumiveis = new ArrayList<>();
-        System.out.println("\n                                      Poções\n");
+
+        System.out.println("\n                                        »»———————————⤷ ♡ ⤶—————————««");
+        System.out.println("                                                 Menu de Poções");
+        System.out.println("                                        »»———————————————————————————««\n");
+
         int contador = 1;
 
         for (Consumivel consumivelAtual : heroi.getInventario()){

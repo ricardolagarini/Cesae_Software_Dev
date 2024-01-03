@@ -39,39 +39,67 @@ public class Jogo {
         ArmaPrincipal cajado = (ArmaPrincipal) armasRep.getItensList().get(5); // ArmaPrincipal Feiticeiro definida
         ArmaPrincipal arco = (ArmaPrincipal) armasRep.getItensList().get(4); // ArmaPrincipal Arqueiro definida
 
-        System.out.println("»»———————————⤷ ❔ ⤶—————————««");
-        System.out.println(" Escolha a classe de seu herói");
-        System.out.println("»»———————————————————————————««");
-        System.out.println("[1] - Cavaleiro");
-        System.out.println("[2] - Feiticeiro");
-        System.out.println("[3] - Arqueiro");
-        System.out.print("Qual vai ser?");
-        System.out.print("");
+        int escolhaHeroi = 0;
 
-        int escolhaHeroi = input.nextInt();
+        while (true) {
+            System.out.println("»»———————————⤷ ❔ ⤶—————————««");
+            System.out.println(" Escolha a classe de seu herói");
+            System.out.println("»»———————————————————————————««");
+            System.out.println("[1] - Cavaleiro");
+            System.out.println("[2] - Feiticeiro");
+            System.out.println("[3] - Arqueiro");
+            System.out.print("Qual vai ser? ");
+
+            if (input.hasNextInt()) {
+                escolhaHeroi = input.nextInt();
+                input.nextLine();// Limpa o buffer do scanner
+                if (escolhaHeroi >= 1 && escolhaHeroi <= 3) {
+                    break;
+                } else {
+                    System.out.println("\n[!] - Escolha inválida. Escolha [1], [2] ou [3]. - [!]");
+                }
+            } else {
+                System.out.println("\n[!] - Valor inválido inserido. Insira um número válido. - [!]\n");
+                input.next(); // Limpa o buffer do scanner
+            }
+        }
 
         System.out.println("");
         System.out.println("»»—————————⤷ ❔ ⤶———————««");
         System.out.println("  Como ele vai se chamar?");
         System.out.println("»»———————————————————————««");
         System.out.print("Nome: ");
-        String nome = input.next();
+        String nome = input.nextLine();
+
+        int escolhaDificuldade = 0;
+
+        while (true) {
+            System.out.println("");
+            System.out.println("»»———————⤷ ❔ ⤶———————««");
+            System.out.println("  Escolha a dificuldade");
+            System.out.println("»»—————————————————————««");
+            System.out.println("[1] - Fácil");
+            System.out.println("[2] - Difícil");
+            System.out.print("Qual a sua decisão?: ");
+
+            if (input.hasNextInt()) {
+                escolhaDificuldade = input.nextInt();
+                if (escolhaDificuldade == 1 || escolhaDificuldade == 2) {
+                    break;
+                } else {
+                    System.out.println("\n[!] - Escolha inválida. Escolha [1] para Fácil ou [2] para Difícil. - [!]");
+                }
+            } else {
+                System.out.println("\n[!] - Valor inválido inserido para a dificuldade. Insira um número válido. - [!]");
+                input.next(); // Limpa o buffer do scanner
+            }
+        }
+
+        int pontosCriacao = 0;
+        int ouro = 0;
         int forca = 0;
         int hpMaximo = 0;
         int hp = 0;
-
-        System.out.println("");
-        System.out.println("»»———————⤷ ❔ ⤶———————««");
-        System.out.println("  Escolha a dificuldade");
-        System.out.println("»»—————————————————————««");
-        System.out.println("[1] - Fácil");
-        System.out.println("[2] - Difícil");
-        System.out.print("Qual a sua decisão?: ");
-        System.out.print("");
-
-        int escolhaDificuldade = input.nextInt();
-        int pontosCriacao = 0;
-        int ouro = 0;
 
         switch (escolhaDificuldade) {
             case 1:
@@ -96,16 +124,30 @@ public class Jogo {
             System.out.println("Pontos disponiveis: " + pontosCriacao);
             System.out.println("Distribua os pontos entre [Vida] e [Força]");
 
+            int pontosInputVida;
+            int pontosInputForca;
+
             System.out.print("Pontos para [Vida]: ");
-            int pontosInputVida = input.nextInt();
+            if (input.hasNextInt()) {
+                pontosInputVida = input.nextInt();
+            } else {
+                System.out.println("\n[!] - Valor inválido inserido para Pontos de Vida - [!]");
+                input.next(); // Limpa o buffer do scanner
+                continue; // Volta para o início do loop
+            }
 
             System.out.print("Pontos para [Força]: ");
-            int pontosInputForca = input.nextInt();
+            if (input.hasNextInt()) {
+                pontosInputForca = input.nextInt();
+            } else {
+                System.out.println("\n[!] - Valor inválido inserido para Pontos de Força - [!]");
+                input.next(); // Limpa o buffer do scanner
+                continue; // Volta para o início do loop
+            }
 
-            if (pontosInputVida + pontosInputForca > pontosCriacao || pontosInputVida + pontosInputForca  < pontosCriacao) {
+            if (pontosInputVida + pontosInputForca > pontosCriacao || pontosInputVida + pontosInputForca < pontosCriacao) {
                 System.out.println("\n[!] - Você não distribuiu quantidade de pontos disponíveis corretamente - [!]");
-                System.out.println("Insira novamente.");
-                System.out.println("");
+                System.out.println("                      [!] - Insira novamente. - [!]");
             } else {
                 hp= pontosInputVida*5;
                 hpMaximo= pontosInputVida*5;
@@ -528,6 +570,7 @@ public class Jogo {
             System.out.print("Qual sua escolha?: ");
 
             escolha = scanner.nextInt();
+
 
             switch (escolha) {
                 case 1:
