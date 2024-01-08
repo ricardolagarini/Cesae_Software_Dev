@@ -10,8 +10,11 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         Jogo jogo = new Jogo();
+
         Heroi heroi = jogo.criarPersonagem();
         reinoNorte(heroi);
 
     }
 }
+
+

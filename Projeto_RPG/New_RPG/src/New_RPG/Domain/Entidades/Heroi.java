@@ -2,6 +2,7 @@ package New_RPG.Domain.Entidades;
 
 import New_RPG.Controller.EstrategiaAtaque.EstrategiaAtaque;
 import New_RPG.Domain.Itens.*;
+import New_RPG.Tools.Audio;
 import java.util.ArrayList;
 
 public class Heroi extends Entidade {
@@ -109,6 +110,7 @@ public class Heroi extends Entidade {
     // Metodo retorna o menu Game Over apos o jogador morrer
     public void morrer() {
         this.setHp(0);
+
         System.out.println("");
         System.out.println(this.getNome() + " morreu!!!");
         System.out.println("                                    \n" +
@@ -119,6 +121,7 @@ public class Heroi extends Entidade {
                 "███▄▄▄██ ██     ██ ██       ██ ██▄▄▄" + "   ███▄▄▄███    ▀█▀    ██▄▄▄ ██     ██▄");
 
         System.out.println("");
+
 
     }
 }

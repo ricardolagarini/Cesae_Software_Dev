@@ -95,7 +95,7 @@ header .flex ul li {
 
 .banner {
   height: 100vh;
-  background-image: url(/Proj_Janeiro/imagens/banner-reduct.jpg);
+  background-image: url(/imagens/banner-reduct.jpg);
   background-position: 100% 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -345,7 +345,7 @@ section.portifolio .flex {
 section.formulario {
   padding: 80px 4%;
   height: 100vh;
-  background-image: url(/Proj_Janeiro/imagens/4.jpg);
+  background-image: url(/imagens/4.jpg);
   background-position: 100% 0;
   background-repeat: no-repeat;
   background-size: cover;

@@ -6,6 +6,7 @@ import New_RPG.Domain.Entidades.NPC;
 import New_RPG.Domain.Itens.ConsumivelCombate;
 import New_RPG.Domain.Itens.Pocao;
 import New_RPG.Jogo.Jogo;
+import New_RPG.Tools.Audio;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -14,11 +15,15 @@ import java.util.Scanner;
 import static New_RPG.Domain.Entidades.Heroi.exibirConsumiveisCombate;
 import static New_RPG.Domain.Entidades.Heroi.exibirConsumiveisPocao;
 import static New_RPG.Jogo.Jogo.reinoNorte;
+import static New_RPG.Tools.Audio.playAudio;
+
 
 public class Arqueiro implements EstrategiaAtaque {
     @Override
     public Entidade atacar(Heroi heroi, NPC npc) throws FileNotFoundException {
         boolean especialUsado =false;
+
+        playAudio("Ficheiros/luta.wav");
 
         do {
 
@@ -59,6 +64,7 @@ public class Arqueiro implements EstrategiaAtaque {
                     if (!especialUsado) {
                         danoHeroi = heroi.getForca() + heroi.getArmaPrincipal().getAtaqueEspecial();
                         especialUsado = true;
+                        critical = false;
                     }else {
                         System.out.println("");
                         System.out.println("[!] - Ataque Especial não pode ser usado! - [!]");
@@ -115,12 +121,28 @@ public class Arqueiro implements EstrategiaAtaque {
 
                             if (cura > heroi.getMaxHp()) {
                                 heroi.setHp(heroi.getMaxHp()); // Ajustar para a vida máxima
+                                try{
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(diferencaVida+ " de HP recuperados.\n");
+                                System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + diferencaVida+ " de HP recuperados.\n");
+
+                                //playAudio("Ficheiros/heal.wav");
+
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                             } else {
                                 heroi.setHp(cura); // Apenas cura a quantidade necessária
+                                try{
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(pocao.getVidaCurar()+ " de HP recuperados.\n");
+                                System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + pocao.getVidaCurar()+ " de HP recuperados.\n");
+
+                               // playAudio("Ficheiros/heal.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
+
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                             }
 
                             heroi.getInventario().remove(pocao);
@@ -136,7 +158,7 @@ public class Arqueiro implements EstrategiaAtaque {
                     }
                     break;
                 default:
-                    System.out.println("Tipo de ataque inválido. Escolha novamente.");
+                    System.out.println("Opção inválida. Escolha novamente.");
                     continue;
             }
 
@@ -146,15 +168,42 @@ public class Arqueiro implements EstrategiaAtaque {
                     npc.setHp(npc.getHp() - danoHeroi);
                     System.out.println("");
                     if (critical) {
+                        try{
                         System.out.println(heroi.getNome() + " deu uma tremenda marretada causando ataque [critical] de " + danoHeroi + " de dano.\n");
+
+                       // playAudio("Ficheiros/crit.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
+
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     } else {
-                        System.out.println(heroi.getNome() + " atacou causando " + danoHeroi + " de dano.\n");
+                        try{
+                          System.out.println(heroi.getNome() + " atacou causando " + danoHeroi + " de dano.\n");
+
+                        //playAudio("Ficheiros/atk.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
+
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     }
                     if (danoNPC < heroi.getHp()) {
                         heroi.setHp(heroi.getHp() - danoNPC);
+                        try{
                         System.out.println(npc.getNome() + " atacou causando " + danoNPC + " de dano.\n");
+
+                       // playAudio("Ficheiros/atk.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
+
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     } else {
                         System.out.println(npc.getNome() + " atacou causando " + danoNPC + " de dano e venceu o combate!");
+
+                        Audio.stopAudio("Ficheiros/luta.wav"); // PARAR MUSICA DE BATALHA
+
                         heroi.morrer(); // HEROI MORREU
 
                         int escolhaMorte;
@@ -196,9 +245,18 @@ public class Arqueiro implements EstrategiaAtaque {
                         return npc;
                     }
                 } else {
+
+                    Audio.stopAudio("Ficheiros/luta.wav"); // PARAR MUSICA DE BATALHA
+
+                    try {
                     System.out.println("");
-                    System.out.println(heroi.getNome() + " atacou causando " + danoHeroi + " de dano e venceu o combate!");
+                    playAudio("Ficheiros/vitoria.wav");
+                    System.out.println(heroi.getNome() + " deu um golpe mortal causando " + danoHeroi + " de dano e venceu o combate!");
                     System.out.println(npc.getNome() + " morre deixando " + npc.getOuro() + " de ouro.");
+                        Thread.sleep(4000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     int ouroAtual = heroi.getOuro() + npc.getOuro();
                     heroi.setOuro(ouroAtual);
                     return heroi;
@@ -208,8 +266,5 @@ public class Arqueiro implements EstrategiaAtaque {
 
         return null;
     }
-
-
-
 
 }

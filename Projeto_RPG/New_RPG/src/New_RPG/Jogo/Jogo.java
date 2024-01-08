@@ -9,11 +9,14 @@ import New_RPG.Domain.Entidades.NPC;
 import New_RPG.Domain.Entidades.Vendedor;
 import New_RPG.Domain.Itens.*;
 import New_RPG.Repository.RepositoryItens;
+import New_RPG.Tools.Audio;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import static New_RPG.Domain.Entidades.Heroi.exibirConsumiveisPocao;
+import static New_RPG.Tools.Audio.playAudio;
 
 public class Jogo {
     public Heroi criarPersonagem() throws FileNotFoundException {
@@ -29,6 +32,7 @@ public class Jogo {
                 "//                                                                                                                                                               // \n" +
                 "///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
 
+
         System.out.println("");
         System.out.println("\"Em um reino distante, um jovem guerreiro conhecido por sua bravura e habilidades de combate, é convocado pelo Rei Tobias para uma missão vital.\n Uma horda de criaturas sombrias invadiu a região do norte, ameaçando a paz do reino. Assim, nosso herói com determinação inabalável, parte\n em uma jornada perigosa para proteger o reino das garras dos desconhecidos seres sombrios.\"");
         System.out.println("");
@@ -42,6 +46,7 @@ public class Jogo {
         int escolhaHeroi = 0;
 
         while (true) {
+
             System.out.println("»»———————————⤷ ❔ ⤶—————————««");
             System.out.println(" Escolha a classe de seu herói");
             System.out.println("»»———————————————————————————««");
@@ -169,7 +174,7 @@ public class Jogo {
                 System.out.println("[!] - Escolha de herói inválida. - [!]");
                 return null;
         }
-    }
+    }//OK
     public static void reinoNorte (Heroi heroi) throws FileNotFoundException {
         System.out.println("");
         System.out.println("»»————————————⤷ ♕ ♕ ⤶————————————««");
@@ -229,12 +234,28 @@ public class Jogo {
 
                             if (cura > heroi.getMaxHp()) {
                                 heroi.setHp(heroi.getMaxHp()); // Ajustar para a vida máxima
-                                System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(diferencaVida+ " de HP recuperados.\n");
+                                try{
+                                    System.out.println("\n["+pocao.getNome()+"] utilizado!");
+                                    System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + diferencaVida+ " de HP recuperados.\n");
+
+                                    playAudio("Ficheiros/heal.wav");
+
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                             } else {
                                 heroi.setHp(cura); // Apenas cura a quantidade necessária
-                                System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(pocao.getVidaCurar()+ " de HP recuperados.\n");
+                                try{
+                                    System.out.println("\n["+pocao.getNome()+"] utilizado!");
+                                    System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + pocao.getVidaCurar()+ " de HP recuperados.\n");
+
+                                     playAudio("Ficheiros/heal.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
+
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                             }
 
                             heroi.getInventario().remove(pocao);
@@ -252,6 +273,7 @@ public class Jogo {
                     //escMenu = scanner.next();
                     break;
                 case 5:
+
                     heroi.exibirStatus();
                     System.out.print("Pressione qualquer tecla para voltar para o menu anterior:  ");
                     escMenu = scanner.next();
@@ -262,7 +284,7 @@ public class Jogo {
                     break;
             }
         } while (true);
-    }
+    }//OK
     public static void salaCaminhoCaverna (Heroi heroi) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
         int escolha;
@@ -270,12 +292,17 @@ public class Jogo {
         do {
             if(heroi.isFim()){return;}
 
+            try {
             System.out.println("");
             System.out.println(heroi.getNome() + " a caminho da Caverna Isolada se depara com um homem caído no chão.");
             System.out.println("Ao se aproximar, nosso herói percebe o corpo gelado e aparentemente sem vida.");
             System.out.println("De repente o homem acorda pedindo pelo seu sangue pois está a dias sem se alimentar muito fraco.");
+                Thread.sleep(6000);
+                System.out.println("");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
-            System.out.println("");
             System.out.println("»»———————⤷ ❔ ⤶———————««");
             System.out.println("    Vampirão faminto");
             System.out.println("»»—————————————————————««");
@@ -287,8 +314,6 @@ public class Jogo {
 
             switch (escolha) {
                 case 1:
-                    System.out.println("\n"+heroi.getNome()+" foi contaminado pelo veneno do Vampirão!");
-                    System.out.println(heroi.getNome()+" teve HP reduzido permanentemente por 100!");
 
                     int novoHpmax = heroi.getMaxHp()-100;
                     int novoHp = heroi.getHp()-100;
@@ -298,12 +323,42 @@ public class Jogo {
                     heroi.setForca(novaForca);
 
                     if(heroi.getHp()>0) {
+                        try{
+                            playAudio("Ficheiros/ouch.wav");
                         System.out.println("\n"+heroi.getNome()+" foi contaminado pelo veneno do Vampirão!");
                         System.out.println(heroi.getNome()+" teve HP reduzido permanentemente por 100!");
-                        System.out.println("Em contrapartida, "+ heroi.getNome()+ " sente uma força estranha tomando seu corpo...");
+                            Thread.sleep(2000);
+                            System.out.println("");
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        try{
+                        System.out.println(heroi.getNome()+ " sente uma força estranha tomando seu corpo...");
+                        System.out.println("É o veneno do Vampirão agindo!");
+                            Thread.sleep(4000);
+                            System.out.println("");
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        try{
                         System.out.println(heroi.getNome()+" teve sua força aumentada em 150!");
-                        System.out.println(heroi.getNome() + " recupera-se do frenesi e segue viagem até a Caverna.");
+                            playAudio("Ficheiros/lvlup.wav");
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        try{
+                        System.out.println("\n" +heroi.getNome() + " recupera-se do frenesi e segue viagem até a Caverna.");
+                            Thread.sleep(3500);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
                         cavernaIsolada(heroi);
+
                     }else{
                         System.out.println("\n"+heroi.getNome()+" não aguentou o veneno do Vampirão.");
                         heroi.morrer();
@@ -353,28 +408,53 @@ public class Jogo {
             }
         } while (escolha != 1 && escolha != 2);
 
-    }
+    } //OK
     public static void cavernaIsolada (Heroi heroi) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
         int escolha;
 
         do {
             if(heroi.isFim()){return;}
+
+            try{
             System.out.println("\nAo adentrar a caverna, a luz do lado de fora diminui rapidamente, mergulhando os intrépidos");
             System.out.println("exploradores em uma escuridão profunda...");
-            System.out.println("Com extrema cautela desbravando a caverna, "+ heroi.getNome()+ " dá de cara com o inimigo!\n");
+                Thread.sleep(6000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            try{
+            System.out.println("\nCom extrema cautela desbravando a caverna, "+ heroi.getNome()+ " dá de cara com o inimigo!!!\n");
+                playAudio("Ficheiros/spoted.wav");
+                Thread.sleep(2000);
+                System.out.println("");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             NPC morcegao = new NPC("Morcegão Sugador de Sangue",1200,1200,150,50);
             heroi.getEstrategiaAtaque().atacar(heroi,morcegao);
 
             if(heroi.isFim()){return;}
 
-            heroi.subirNivel();
+            try {
+                heroi.subirNivel();
+                playAudio("Ficheiros/lvlup.wav");
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
+            try{
             System.out.println("");
             System.out.println("Após a luta, nosso herói avista um corpo.");
             System.out.println("Olhando de perto o corpo parece estar ali há anos...");
             System.out.println("Analisando as vestimentas aparenta ser de um jovem nobre ou mercador.");
+                Thread.sleep(6000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             System.out.println("");
             System.out.println("»»———————⤷ ❔ ⤶———————««");
@@ -392,19 +472,33 @@ public class Jogo {
                     int chance = random.nextInt(10) + 1; // Número aleatório entre 1 e 10
 
                     if (chance <= 3) { // Chance de 30%
+                        try{
                         System.out.println("\nVocê encontrou um [Elixir Milagroso]! Que sorte!");
                         System.out.println(" ✧ ദ്ദി( •ᴗ- )");
                         System.out.println("\n[Elixir Milagroso] adicionado ao inventário.");
+                            playAudio("Ficheiros/heal.wav");
+                            Thread.sleep(4000);
+                            System.out.println("");
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
 
                         RepositoryItens dropRep = new RepositoryItens();
                         Pocao itemDrop = (Pocao) dropRep.getItensList().get(17); // Item linha 17 Elixir Milagroso
                         heroi.addItensInventario(itemDrop);
 
                     } else {
+                        try{
                         System.out.println("\nVocê foi picado por um escorpião!");
                         System.out.println("(x﹏x)");
                         System.out.println(heroi.getNome()+" recebeu dano de 100 em seu HP.");
                         heroi.setHp(heroi.getHp()-100);
+                            playAudio("Ficheiros/ouch.wav");
+                        Thread.sleep(4000);
+                        System.out.println("");
+                    } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                         if (heroi.getHp()<0){
                             System.out.println("\nO veneno era muito forte!");
@@ -457,11 +551,29 @@ public class Jogo {
         } while (escolha != 1 && escolha != 2);
 
         System.out.println("");
+        try{
         System.out.println(heroi.getNome()+" com passos silenciosos, avança cautelosamente pelas sombras da caverna onde o eco ");
-        System.out.println("sussurrante de águas subterrâneas se mistura ao ruído dos próprios batimentos cardíacos.");
+        System.out.println("sussurrante de águas subterrâneas se mistura ao ruído dos próprios batimentos cardíacos.\n");
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        try{
         System.out.println("Cada esquina escura promete o desconhecido, enquanto a presença de monstros adormecidos paira no ar");
-        System.out.println("aumentando a tensão a cada passo adiante.");
-        System.out.println("Num súbito estrondo, um ogro colossal emerge das sombras!\n");
+        System.out.println("aumentando a tensão a cada passo adiante.\n");
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        try{
+        System.out.println("Num súbito estrondo, um ogro colossal emerge das sombras!!!\n");
+            playAudio("Ficheiros/spoted.wav");
+            Thread.sleep(3000);
+            System.out.println("");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         NPC bolgrom = new NPC("Bolgrom, o Brutal",2200,2200,250,250);
         heroi.getEstrategiaAtaque().atacar(heroi,bolgrom);
@@ -473,14 +585,31 @@ public class Jogo {
             ConsumivelCombate combateDrop = (ConsumivelCombate) dropRep.getItensList().get(23); // Item linha 23 - Bomba fedorenta
             heroi.addItensInventario(combateDrop);
 
+            try{
             System.out.println("\nBolgrom, o Brutal dropou o item "+"["+combateDrop.getNome()+"]"+ "!");
             System.out.println("["+combateDrop.getNome()+"]"+ " foi adicionado ao inventário.");
+                playAudio("Ficheiros/drop.wav");
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
-            heroi.subirNivel();
+            try {
+                heroi.subirNivel();
+                playAudio("Ficheiros/lvlup.wav");
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             System.out.println("");
+            try{
             System.out.println(heroi.getNome() + " terminou a batalha com algumas feridas mas nada grave... ");
             System.out.println("Porém preocupado com o que vem pela frente.");
+                Thread.sleep(6000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("");
 
             Scanner input = new Scanner(System.in);
@@ -520,10 +649,14 @@ public class Jogo {
 
                                 heroi.setForca(novaForca);
 
-                                if (cura > diferencaVida) {
+                                if (cura > heroi.getMaxHp()) {
                                     heroi.setHp(heroi.getMaxHp()); // Ajustar para a vida máxima
+                                    System.out.println("\n["+pocao.getNome()+"] utilizado!");
+                                    System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + diferencaVida+ " de HP recuperados.\n");
                                 } else {
                                     heroi.setHp(cura); // Apenas cura a quantidade necessária
+                                    System.out.println("\n["+pocao.getNome()+"] utilizado!");
+                                    System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + pocao.getVidaCurar()+ " de HP recuperados.\n");
                                 }
 
                                 heroi.getInventario().remove(pocao);
@@ -551,16 +684,23 @@ public class Jogo {
                 }
             }while (escolhaProx <1 || escolhaProx> 2 );
         }
-    }
+    }//OK
     public static void salaFloresta (Heroi heroi) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
         int escolha;
 
         do {
             if(heroi.isFim()){return;}
+
             System.out.println("");
+            try {
             System.out.println(heroi.getNome() + " fica encantado com a floresta e sua diversidade, mas o que mais lhe chamou\n" +
                     "atenção foi uma estranha árvore com um fruto que nunca viu antes.");
+                Thread.sleep(1500);
+                System.out.println("");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("");
             System.out.println("»»———————⤷ ❔ ⤶———————««");
             System.out.println("    Arvore Misteriosa");
@@ -583,11 +723,26 @@ public class Jogo {
                         int novaVidaAtual = heroi.getHp()+100;
                         heroi.setHp(novaVidaAtual);
 
+                        try {
                         System.out.println("\nVocê comeu o fruto e sua vida máxima aumentou em 100!");
                         System.out.println(" ✧ ദ്ദി( •ᴗ- )");
+                            playAudio("Ficheiros/heal.wav");
+                            Thread.sleep(1500);
+                            System.out.println("");
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
                     } else {
+                        try {
+                            playAudio("Ficheiros/ouch.wav");
                         System.out.println("\nVocê comeu o fruto, mas estava bichado.");
                         System.out.println("(╥﹏╥)");
+                            Thread.sleep(1500);
+                            System.out.println("");
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                     break;
                 case 2:
@@ -599,23 +754,56 @@ public class Jogo {
             }
         } while (escolha != 1 && escolha != 2);
 
+        try {
         System.out.println("");
         System.out.println(heroi.getNome()+" segue floresta a dentro...");
         System.out.println("Um cheiro forte de carne apodrecida contamina o ar...");
-        System.out.println("Uma Criatura desconhecida aparece!");
-        System.out.println("");
+            Thread.sleep(1800);
+            System.out.println("");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        try {
+        System.out.println("Uma Criatura desconhecida aparece!!!");
+        playAudio("Ficheiros/spoted.wav");
+            Thread.sleep(2000);
+            System.out.println("");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         NPC goblin = new NPC("Goblin",1200,1200,150,50);
         heroi.getEstrategiaAtaque().atacar(heroi,goblin);
 
         if(heroi.isFim()){return;}
 
+        try {
         heroi.subirNivel();
+        playAudio("Ficheiros/lvlup.wav");
+        Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
+        try {
         System.out.println("");
         System.out.println("Após a batalha " +heroi.getNome()+" caminha por mais alguns minutos, ");
         System.out.println("e sente que ar começa a ficar denso e umido, inesperadamente algo surge em sua frente!");
         System.out.println("");
+        Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            System.out.println("Chefe da área apareceu!!!");
+            playAudio("Ficheiros/spoted.wav");
+            Thread.sleep(2000);
+            System.out.println("");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         NPC planta = new NPC("Dark Ent",2000,2000,280,200);
         heroi.getEstrategiaAtaque().atacar(heroi,planta);
@@ -627,15 +815,32 @@ public class Jogo {
             Pocao itemDrop = (Pocao) dropRep.getItensList().get(20); // Item linha 20 - Cogumelo Magico
             heroi.addItensInventario(itemDrop);
 
-            System.out.println("\nDark Ent dropou o item "+"["+itemDrop.getNome()+"]"+ "!");
-            System.out.println("["+itemDrop.getNome()+"]"+ " foi adicionado ao inventário.");
+            try {
+                System.out.println("\nDark Ent dropou o item "+"["+itemDrop.getNome()+"]"+ "!");
+                System.out.println("["+itemDrop.getNome()+"]"+ " foi adicionado ao inventário.");
+                playAudio("Ficheiros/drop.wav");
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
-            heroi.subirNivel();
+            try {
+                heroi.subirNivel();
+                playAudio("Ficheiros/lvlup.wav");
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
+            try {
             System.out.println("");
             System.out.println(heroi.getNome() + " pensou que não iria conseguir escapar dessa vivo... ");
             System.out.println("Após descansar e recuperar o folego, nosso herói segue em frente");
             System.out.println("");
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             Scanner input = new Scanner(System.in);
             int escolhaProx;
@@ -676,12 +881,28 @@ public class Jogo {
 
                                 if (cura > heroi.getMaxHp()) {
                                     heroi.setHp(heroi.getMaxHp()); // Ajustar para a vida máxima
-                                    System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                    System.out.println(diferencaVida+ " de HP recuperados.\n");
+                                    try{
+                                        System.out.println("\n["+pocao.getNome()+"] utilizado!");
+                                        System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + diferencaVida+ " de HP recuperados.\n");
+
+                                        playAudio("Ficheiros/heal.wav");
+
+                                        Thread.sleep(1000);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
                                 } else {
                                     heroi.setHp(cura); // Apenas cura a quantidade necessária
-                                    System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                    System.out.println(pocao.getVidaCurar()+ " de HP recuperados.\n");
+                                    try{
+                                        System.out.println("\n["+pocao.getNome()+"] utilizado!");
+                                        System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + pocao.getVidaCurar()+ " de HP recuperados.\n");
+
+                                         playAudio("Ficheiros/heal.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
+
+                                        Thread.sleep(1000);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
 
                                 heroi.getInventario().remove(pocao);
@@ -709,7 +930,7 @@ public class Jogo {
                 }
             }while (escolhaProx <1 || escolhaProx> 2 );
         }
-    }
+    } // OK
     public static void salaLagoNebuloso (Heroi heroi) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
         int escolha;
@@ -793,6 +1014,9 @@ public class Jogo {
     }
     public static void salaMontanhasIngrimes (Heroi heroi) throws FileNotFoundException {
 
+
+
+
         Scanner scanner = new Scanner(System.in);
         int escolha;;
         String escMenu;
@@ -830,6 +1054,7 @@ public class Jogo {
                     System.out.println("já que a moite estava vindo, alem do frio os monstros são mais ativos nessa hora.");
                     System.out.println("Passava da meia noite, e ninguem apareceu... Cansado de sua viagem, "+heroi.getNome()+" pega no sono.\n");
 
+                    try {
                     System.out.println("∩――――――――∩\n" +
                             "||    zZz    ||\n" +
                             "||   ( - ˕ -)აZZzz\n" +
@@ -837,7 +1062,13 @@ public class Jogo {
                             "(　ノ　     ⌒ ヽ     ＼\n" +
                             "＼　 　||￣￣￣￣￣￣￣￣￣||\n" +
                             "　 ＼,ﾉ||______________||");
+
+                    playAudio("Ficheiros/soninho.wav");
+                    Thread.sleep(6000);
                     System.out.println("");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
                     heroi.setHp(heroi.getMaxHp());
                     System.out.println("\nSeu Hp foi totalmente recuperado!\n");
@@ -919,11 +1150,11 @@ public class Jogo {
                             if (cura > heroi.getMaxHp()) {
                                 heroi.setHp(heroi.getMaxHp()); // Ajustar para a vida máxima
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(diferencaVida+ " de HP recuperados.\n");
+                                System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + diferencaVida+ " de HP recuperados.\n");
                             } else {
                                 heroi.setHp(cura); // Apenas cura a quantidade necessária
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(pocao.getVidaCurar()+ " de HP recuperados.\n");
+                                System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + pocao.getVidaCurar()+ " de HP recuperados.\n");
                             }
 
                             heroi.getInventario().remove(pocao);
@@ -1057,11 +1288,11 @@ public class Jogo {
                             if (cura > heroi.getMaxHp()) {
                                 heroi.setHp(heroi.getMaxHp()); // Ajustar para a vida máxima
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(diferencaVida+ " de HP recuperados.\n");
+                                System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + diferencaVida+ " de HP recuperados.\n");
                             } else {
                                 heroi.setHp(cura); // Apenas cura a quantidade necessária
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(pocao.getVidaCurar()+ " de HP recuperados.\n");
+                                System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + pocao.getVidaCurar()+ " de HP recuperados.\n");
                             }
 
                             heroi.getInventario().remove(pocao);
@@ -1152,7 +1383,6 @@ public class Jogo {
         }
 
     }
-
 
 
 

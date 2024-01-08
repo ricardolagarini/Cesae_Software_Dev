@@ -13,11 +13,11 @@ ConsumivelCombate;Avada Kedava;2000;[Feiticeiro];0;0;3000;0;0
 ConsumivelCombate;Meteoro de Pegasus;2000;[Cavaleiro];0;0;3000;0;0
 ConsumivelCombate;Flecha Fuminante;2000;[Arqueiro];0;0;3000;0;0
 Pocao;Cana Braba;50;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;350;30
-Pocao;Pao Velho;35;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;200;0
+Pocao;Pao Velho;35;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;200;5
 Pocao;Francesinha Gourmet;80;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;500;30
 Pocao;Anabolizante;100;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;0;50
 Pocao;Elixir Milagroso;700;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;1000;50
-Pocao;Cigarrao de Palha;30;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;0;10
+Pocao;Cigarrao de Palha;30;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;200;10
 Pocao;Bacalhau em Conserva;80;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;600;20
 Pocao;Cogumelo Magico;100;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;800;30
 Pocao;Sandes de Creme de Ovo;50;[Cavaleiro,Arqueiro,Feiticeiro];0;0;0;600;5

@@ -81,11 +81,14 @@ public class VendedorController {
 
         while (continuarComprando) {
             imprimirLoja(lojaSuspeita);
+
+            System.out.println("\nSaldo em ouro: "+heroi.getOuro());
+
             System.out.print("\nQual item deseja comprar? : ");
             int itemCompra = input.nextInt();
 
             if (itemCompra <= 0 || itemCompra > lojaSuspeita.size()) {
-                System.out.println("[!] - Opção inválida. Tente novamente. - [!]");
+                System.out.println("\n[!] - Opção inválida. Tente novamente. - [!]\n");
                 continue;
             }
 

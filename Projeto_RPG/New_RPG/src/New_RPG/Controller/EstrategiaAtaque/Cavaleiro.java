@@ -58,6 +58,7 @@ public class Cavaleiro implements EstrategiaAtaque{
                     if (!especialUsado) {
                         danoHeroi = heroi.getForca() + heroi.getArmaPrincipal().getAtaqueEspecial();
                         especialUsado = true;
+                        critical = false;
                     }else {
                         System.out.println("");
                         System.out.println("[!] - Ataque Especial não pode ser usado! - [!]");
@@ -115,11 +116,11 @@ public class Cavaleiro implements EstrategiaAtaque{
                             if (cura > heroi.getMaxHp()) {
                                 heroi.setHp(heroi.getMaxHp()); // Ajustar para a vida máxima
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(diferencaVida+ " de HP recuperados.\n");
+                                System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + diferencaVida+ " de HP recuperados.\n");
                             } else {
                                 heroi.setHp(cura); // Apenas cura a quantidade necessária
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
-                                System.out.println(pocao.getVidaCurar()+ " de HP recuperados.\n");
+                                System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + pocao.getVidaCurar()+ " de HP recuperados.\n");
                             }
 
                             heroi.getInventario().remove(pocao);
@@ -135,7 +136,7 @@ public class Cavaleiro implements EstrategiaAtaque{
                     }
                     break;
                 default:
-                    System.out.println("Tipo de ataque inválido. Escolha novamente.");
+                    System.out.println("Opção inválida. Escolha novamente.");
                     continue;
             }
 
@@ -153,7 +154,7 @@ public class Cavaleiro implements EstrategiaAtaque{
                             System.out.println(heroi.getNome() + " atacou causando " + danoHeroi + " de dano.\n");
                         }
                     } else {
-                        System.out.println(heroi.getNome() + " atacou causando " + danoHeroi + " de dano e venceu o combate!");
+                        System.out.println(heroi.getNome() + " deu um golpe mortal causando " + danoHeroi + " de dano e venceu o combate!");
                         System.out.println(npc.getNome() + " morre deixando " + npc.getOuro() + " de ouro.");
                         int ouroAtual = heroi.getOuro() + npc.getOuro();
                         heroi.setOuro(ouroAtual);
