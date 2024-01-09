@@ -193,7 +193,7 @@ public class Arqueiro implements EstrategiaAtaque {
                         try{
                         System.out.println(npc.getNome() + " atacou causando " + danoNPC + " de dano.\n");
 
-                       // playAudio("Ficheiros/atk.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
+                       // playAudio("Ficheiros/atk.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA.
 
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
