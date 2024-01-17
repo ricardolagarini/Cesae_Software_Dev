@@ -32,8 +32,4 @@ public class Venda {
     public void exibirDetalhesProduto() {
         System.out.println(this.tipoProduto + "\t| " + this.produto + "\t| " + this.precoUnitario + "€");
     }
-
-    public void exibirValorTotal() {
-        System.out.println("Valor total:" +this.precoUnitario + "€");
-    }
 }

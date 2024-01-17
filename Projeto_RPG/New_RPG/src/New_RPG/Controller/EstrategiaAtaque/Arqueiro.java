@@ -125,8 +125,6 @@ public class Arqueiro implements EstrategiaAtaque {
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
                                 System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + diferencaVida+ " de HP recuperados.\n");
 
-                                //playAudio("Ficheiros/heal.wav");
-
                                 Thread.sleep(1000);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
@@ -136,8 +134,6 @@ public class Arqueiro implements EstrategiaAtaque {
                                 try{
                                 System.out.println("\n["+pocao.getNome()+"] utilizado!");
                                 System.out.println("Incrementou a força em +" +pocao.getAumentoForca() +" e " + pocao.getVidaCurar()+ " de HP recuperados.\n");
-
-                               // playAudio("Ficheiros/heal.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
 
                                 Thread.sleep(1000);
                             } catch (InterruptedException e) {
@@ -171,8 +167,6 @@ public class Arqueiro implements EstrategiaAtaque {
                         try{
                         System.out.println(heroi.getNome() + " deu uma tremenda marretada causando ataque [critical] de " + danoHeroi + " de dano.\n");
 
-                       // playAudio("Ficheiros/crit.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
-
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -180,8 +174,6 @@ public class Arqueiro implements EstrategiaAtaque {
                     } else {
                         try{
                           System.out.println(heroi.getNome() + " atacou causando " + danoHeroi + " de dano.\n");
-
-                        //playAudio("Ficheiros/atk.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA
 
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
@@ -192,8 +184,6 @@ public class Arqueiro implements EstrategiaAtaque {
                         heroi.setHp(heroi.getHp() - danoNPC);
                         try{
                         System.out.println(npc.getNome() + " atacou causando " + danoNPC + " de dano.\n");
-
-                       // playAudio("Ficheiros/atk.wav"); // SE ATIVAR A MUSICA DE BATALHA NAO PARA.
 
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
