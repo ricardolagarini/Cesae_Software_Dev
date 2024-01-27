@@ -1,3 +1,7 @@
+****************************************************************
+/                    Criar Tabelas                             /
+****************************************************************
+
 CREATE TABLE bola(
 
     id_bola INT AUTO_INCREMENT,
@@ -69,9 +73,14 @@ CREATE TABLE escalao(
     );
 
 
+****************************************************************
+/                    Inserir Keys                              /
+****************************************************************
+
 ALTER TABLE bola 
 
 ADD FOREIGN KEY (id_equipa) REFERENCES equipa(id_equipa);
+
  
 ALTER TABLE experiencia
 
@@ -81,6 +90,10 @@ ADD FOREIGN key (id_treinador) REFERENCES treinador(id_treinador),
 
 ADD FOREIGN KEY (id_escalao) REFERENCES escalao(id_escalao);
 
+
+****************************************************************
+/                    Inserir dados                             /
+****************************************************************
 
 INSERT INTO treinador (nome, idade, telefone)
 VALUES
@@ -129,7 +142,7 @@ VALUES
 
 
 ****************************************************************
-/                                                              /
+/                    Criar as Views                            /
 ****************************************************************
 
 CREATE VIEW Ex_a AS
@@ -189,7 +202,9 @@ JOIN experiencia ex ON t.id_treinador = ex.id_treinador
 JOIN equipa e ON ex.id_equipa = e.id_equipa;
 
 CREATE VIEW Ex_l AS
-SELECT *
+SELECT e.id_equipa, e.nome AS 'Nome da Equipa', e.cidade, e.diretor,
+       ex.id_treinador, t.nome AS 'Nome do Treinador', t.idade, t.telefone,
+       ex.id_escalao, ex.anos
 FROM equipa e
 JOIN experiencia ex ON e.id_equipa = ex.id_equipa
 JOIN treinador t ON ex.id_treinador = t.id_treinador
